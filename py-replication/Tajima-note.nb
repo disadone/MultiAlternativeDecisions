@@ -1,0 +1,4527 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 12.1' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[    144182,       4519]
+NotebookOptionsPosition[    142568,       4483]
+NotebookOutlinePosition[    142987,       4500]
+CellTagsIndexPosition[    142944,       4497]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[TextData[{
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     RowBox[{"n", "\[CenterDot]", " ", "\[Delta]"}], " ", "t"}], "=", "t"}], 
+   TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "f4c54db7-3ff8-4e5d-8c53-7660de5b9e80"],
+ "\n\n",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"V", "(", 
+     RowBox[{"t", ",", 
+      RowBox[{
+       StyleBox["x",
+        FontWeight->"Bold"], 
+       StyleBox[";",
+        FontWeight->"Plain"], 
+       StyleBox["\[Rho]",
+        FontWeight->"Plain"]}]}], ")"}], "=", 
+    RowBox[{"max", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{
+        RowBox[{
+         UnderscriptBox["max", "i"], 
+         RowBox[{
+          SubscriptBox[
+           OverscriptBox["r", "^"], "i"], "(", 
+          RowBox[{"t", ",", 
+           SubscriptBox["x", "i"]}], ")"}]}], "-", 
+        RowBox[{"\[Rho]", " ", 
+         SubscriptBox["t", "w"]}]}], ",", 
+       RowBox[{
+        RowBox[{"\[LeftAngleBracket]", 
+         RowBox[{"V", "(", 
+          RowBox[{
+           RowBox[{"t", "+", 
+            RowBox[{"\[Delta]", " ", "t"}]}], ",", 
+           StyleBox["x",
+            FontWeight->"Bold"]}], ")"}], "\[RightAngleBracket]"}], "-", 
+        RowBox[{
+         RowBox[{"(", 
+          RowBox[{"c", "+", "\[Rho]"}], ")"}], "\[Delta]", " ", "t"}]}]}], 
+      "}"}]}]}], TraditionalForm]],ExpressionUUID->
+  "2ed5afba-dfec-4e59-ac74-c0260b8d6554"],
+ " \tEquation(1)\n\nMultinormal distribution\n",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"PDF", "=", 
+    RowBox[{
+     SuperscriptBox[
+      RowBox[{"(", 
+       RowBox[{"2", "\[Pi]"}], ")"}], 
+      RowBox[{"-", 
+       FractionBox["k", "2"]}]], 
+     SuperscriptBox[
+      RowBox[{"det", "(", 
+       StyleBox["\[CapitalSigma]",
+        FontWeight->"Bold"], ")"}], 
+      RowBox[{"-", 
+       FractionBox["1", "2"]}]], 
+     SuperscriptBox["\[ExponentialE]", 
+      RowBox[{
+       RowBox[{"-", 
+        FractionBox["1", "2"]}], 
+       SuperscriptBox[
+        RowBox[{"(", 
+         RowBox[{
+          StyleBox["x",
+           FontWeight->"Bold"], "-", 
+          StyleBox["\[Mu]",
+           FontWeight->"Bold"]}], ")"}], "T"], 
+       RowBox[{
+        SuperscriptBox[
+         StyleBox["\[CapitalSigma]",
+          FontWeight->"Bold"], 
+         RowBox[{"-", "1"}]], "(", 
+        RowBox[{
+         StyleBox["x",
+          FontWeight->"Bold"], "-", 
+         StyleBox["\[Mu]",
+          FontWeight->"Bold"]}], ")"}]}]]}]}], TraditionalForm]],
+  ExpressionUUID->"4d2bec9f-13be-4b05-830d-90846753569b"],
+ "\n\n",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"p", "(", 
+     RowBox[{
+      RowBox[{"\[Delta]", " ", 
+       SubscriptBox[
+        StyleBox["x",
+         FontWeight->"Bold"], "n"]}], "|", 
+      StyleBox["z",
+       FontWeight->"Bold"]}], ")"}], "=", 
+    RowBox[{
+     SuperscriptBox[
+      RowBox[{"(", 
+       RowBox[{"2", "\[Pi]"}], ")"}], 
+      RowBox[{"-", 
+       FractionBox["n", "2"]}]], 
+     SuperscriptBox[
+      RowBox[{"det", "(", 
+       RowBox[{
+        SubscriptBox[
+         StyleBox["\[CapitalSigma]",
+          FontWeight->"Bold"], "x"], "\[Delta]", " ", "t"}], ")"}], 
+      RowBox[{"-", 
+       FractionBox["1", "2"]}]], 
+     SuperscriptBox["\[ExponentialE]", 
+      RowBox[{
+       RowBox[{"-", 
+        FractionBox["1", "2"]}], 
+       SuperscriptBox[
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"\[Delta]", " ", 
+           SubscriptBox[
+            StyleBox["x",
+             FontWeight->"Bold"], "n"]}], "-", 
+          RowBox[{
+           StyleBox["z",
+            FontWeight->"Bold"], " ", "\[Delta]", " ", "t"}]}], ")"}], "T"], 
+       SuperscriptBox[
+        RowBox[{"(", 
+         RowBox[{
+          SubscriptBox[
+           StyleBox["\[CapitalSigma]",
+            FontWeight->"Bold"], "x"], "\[Delta]", " ", "t"}], ")"}], 
+        RowBox[{"-", "1"}]], 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"\[Delta]", " ", 
+          SubscriptBox[
+           StyleBox["x",
+            FontWeight->"Bold"], "n"]}], "-", 
+         RowBox[{
+          StyleBox["z",
+           FontWeight->"Bold"], " ", "\[Delta]", " ", "t"}]}], ")"}]}]]}]}], 
+   TraditionalForm]],ExpressionUUID->"c785cce2-498e-4933-a665-2bc4c6b8a0b1"],
+ "\n\n\t",
+ Cell[BoxData[{
+  FormBox[
+   RowBox[{"p", "(", 
+    RowBox[{
+     RowBox[{
+      StyleBox["z",
+       FontWeight->"Bold"], 
+      StyleBox["|",
+       FontWeight->"Plain"], 
+      RowBox[{
+       StyleBox["\[Delta]",
+        FontWeight->"Plain"], 
+       StyleBox[" ",
+        FontWeight->"Plain"], 
+       SubscriptBox[
+        StyleBox["x",
+         FontWeight->"Bold"], "1"]}]}], ",", "\[Ellipsis]", ",", 
+     RowBox[{
+      StyleBox["\[Delta]",
+       FontWeight->"Plain"], 
+      StyleBox[" ",
+       FontWeight->"Plain"], 
+      SubscriptBox[
+       StyleBox["x",
+        FontWeight->"Bold"], "n"]}]}], ")"}], 
+   TraditionalForm], "\[IndentingNewLine]", 
+  FormBox[
+   RowBox[{"=", 
+    RowBox[{
+     FractionBox[
+      RowBox[{"p", "(", 
+       RowBox[{
+        StyleBox["z",
+         FontWeight->"Bold"], ",", 
+        RowBox[{
+         StyleBox["\[Delta]",
+          FontWeight->"Plain"], 
+         StyleBox[" ",
+          FontWeight->"Plain"], 
+         SubscriptBox[
+          StyleBox["x",
+           FontWeight->"Bold"], "1"]}], ",", "\[Ellipsis]", ",", 
+        RowBox[{
+         StyleBox["\[Delta]",
+          FontWeight->"Plain"], 
+         StyleBox[" ",
+          FontWeight->"Plain"], 
+         SubscriptBox[
+          StyleBox["x",
+           FontWeight->"Bold"], "n"]}]}], ")"}], 
+      RowBox[{"p", "(", 
+       RowBox[{
+        RowBox[{
+         StyleBox["\[Delta]",
+          FontWeight->"Plain"], 
+         StyleBox[" ",
+          FontWeight->"Plain"], 
+         SubscriptBox[
+          StyleBox["x",
+           FontWeight->"Bold"], "1"]}], ",", "\[Ellipsis]", ",", 
+        RowBox[{
+         StyleBox["\[Delta]",
+          FontWeight->"Plain"], 
+         StyleBox[" ",
+          FontWeight->"Plain"], 
+         SubscriptBox[
+          StyleBox["x",
+           FontWeight->"Bold"], "n"]}]}], ")"}]], "=", 
+     FractionBox[
+      RowBox[{
+       RowBox[{"p", "(", 
+        StyleBox["z",
+         FontWeight->"Bold"], ")"}], 
+       RowBox[{"p", "(", 
+        RowBox[{
+         RowBox[{
+          StyleBox["\[Delta]",
+           FontWeight->"Plain"], 
+          StyleBox[" ",
+           FontWeight->"Plain"], 
+          SubscriptBox[
+           StyleBox["x",
+            FontWeight->"Bold"], "1"]}], ",", "\[Ellipsis]", ",", 
+         RowBox[{
+          RowBox[{
+           StyleBox["\[Delta]",
+            FontWeight->"Plain"], 
+           StyleBox[" ",
+            FontWeight->"Plain"], 
+           SubscriptBox[
+            StyleBox["x",
+             FontWeight->"Bold"], "n"]}], "|", 
+          StyleBox["z",
+           FontWeight->"Bold"]}]}], ")"}]}], 
+      RowBox[{"p", "(", 
+       RowBox[{
+        RowBox[{
+         StyleBox["\[Delta]",
+          FontWeight->"Plain"], 
+         StyleBox[" ",
+          FontWeight->"Plain"], 
+         SubscriptBox[
+          StyleBox["x",
+           FontWeight->"Bold"], "1"]}], ",", "\[Ellipsis]", ",", 
+        RowBox[{
+         StyleBox["\[Delta]",
+          FontWeight->"Plain"], 
+         StyleBox[" ",
+          FontWeight->"Plain"], 
+         SubscriptBox[
+          StyleBox["x",
+           FontWeight->"Bold"], "n"]}]}], ")"}]]}]}], 
+   TraditionalForm], "\[IndentingNewLine]", 
+  FormBox[
+   RowBox[{"\[Proportional]", 
+    RowBox[{
+     RowBox[{"p", "(", 
+      StyleBox["z",
+       FontWeight->"Bold"], ")"}], 
+     RowBox[{"p", "(", 
+      RowBox[{
+       RowBox[{
+        StyleBox["\[Delta]",
+         FontWeight->"Plain"], 
+        StyleBox[" ",
+         FontWeight->"Plain"], 
+        SubscriptBox[
+         StyleBox["x",
+          FontWeight->"Bold"], "1"]}], ",", "\[Ellipsis]", ",", 
+       RowBox[{
+        RowBox[{
+         StyleBox["\[Delta]",
+          FontWeight->"Plain"], 
+         StyleBox[" ",
+          FontWeight->"Plain"], 
+         SubscriptBox[
+          StyleBox["x",
+           FontWeight->"Bold"], "n"]}], "|", 
+        StyleBox["z",
+         FontWeight->"Bold"]}]}], ")"}]}]}], 
+   TraditionalForm], "\[IndentingNewLine]", 
+  FormBox[
+   RowBox[{"=", 
+    RowBox[{
+     RowBox[{"p", "(", 
+      StyleBox["z",
+       FontWeight->"Bold"], ")"}], 
+     RowBox[{
+      UnderoverscriptBox["\[Product]", 
+       RowBox[{
+        SuperscriptBox["n", "\[Prime]"], "=", "1"}], "n"], 
+      RowBox[{"p", "(", 
+       RowBox[{
+        RowBox[{"\[Delta]", " ", 
+         SubscriptBox[
+          StyleBox["x",
+           FontWeight->"Bold"], 
+          SuperscriptBox["n", "\[Prime]"]]}], "|", 
+        StyleBox["z",
+         FontWeight->"Bold"]}], ")"}]}]}]}], 
+   TraditionalForm], "\[IndentingNewLine]", 
+  FormBox[
+   RowBox[{"=", 
+    RowBox[{
+     SuperscriptBox[
+      RowBox[{"(", 
+       RowBox[{"2", "\[Pi]"}], ")"}], 
+      RowBox[{"-", 
+       FractionBox["1", "2"]}]], 
+     SuperscriptBox[
+      RowBox[{"det", "(", 
+       SubscriptBox[
+        StyleBox["\[CapitalSigma]",
+         FontWeight->"Bold"], "z"], ")"}], 
+      RowBox[{"-", 
+       FractionBox["1", "2"]}]], 
+     SuperscriptBox["\[ExponentialE]", 
+      RowBox[{
+       RowBox[{"-", 
+        FractionBox["1", "2"]}], 
+       SuperscriptBox[
+        RowBox[{"(", 
+         RowBox[{
+          StyleBox["z",
+           FontWeight->"Bold"], 
+          StyleBox["-",
+           FontWeight->"Plain"], 
+          StyleBox[
+           OverscriptBox[
+            StyleBox["z",
+             FontWeight->"Bold"], "_"],
+           FontWeight->"Bold"]}], ")"}], "T"], 
+       RowBox[{
+        SubsuperscriptBox[
+         StyleBox["\[CapitalSigma]",
+          FontWeight->"Bold"], "z", 
+         RowBox[{"-", "1"}]], "(", 
+        RowBox[{
+         StyleBox["z",
+          FontWeight->"Bold"], 
+         StyleBox["-",
+          FontWeight->"Plain"], 
+         StyleBox[
+          OverscriptBox[
+           StyleBox["z",
+            FontWeight->"Bold"], "_"],
+          FontWeight->"Bold"]}], ")"}]}]], 
+     RowBox[{
+      UnderoverscriptBox["\[Product]", 
+       RowBox[{
+        SuperscriptBox["n", "\[Prime]"], "=", "1"}], "n"], 
+      RowBox[{
+       SuperscriptBox[
+        RowBox[{"(", 
+         RowBox[{"2", "\[Pi]"}], ")"}], 
+        RowBox[{"-", 
+         FractionBox["n", "2"]}]], 
+       SuperscriptBox[
+        RowBox[{"det", "(", 
+         RowBox[{
+          SubscriptBox[
+           StyleBox["\[CapitalSigma]",
+            FontWeight->"Bold"], "x"], "\[Delta]", " ", "t"}], ")"}], 
+        RowBox[{"-", 
+         FractionBox["1", "2"]}]], 
+       SuperscriptBox["\[ExponentialE]", 
+        RowBox[{
+         RowBox[{"-", 
+          FractionBox["1", "2"]}], 
+         SuperscriptBox[
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{"\[Delta]", " ", 
+             SubscriptBox[
+              StyleBox["x",
+               FontWeight->"Bold"], 
+              SuperscriptBox["n", "\[Prime]"]]}], "-", 
+            RowBox[{
+             StyleBox["z",
+              FontWeight->"Bold"], " ", "\[Delta]", " ", "t"}]}], ")"}], "T"], 
+         SuperscriptBox[
+          RowBox[{"(", 
+           RowBox[{
+            SubscriptBox[
+             StyleBox["\[CapitalSigma]",
+              FontWeight->"Bold"], "x"], "\[Delta]", " ", "t"}], ")"}], 
+          RowBox[{"-", "1"}]], 
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{"\[Delta]", " ", 
+            SubscriptBox[
+             StyleBox["x",
+              FontWeight->"Bold"], 
+             SuperscriptBox["n", "\[Prime]"]]}], "-", 
+           RowBox[{
+            StyleBox["z",
+             FontWeight->"Bold"], " ", "\[Delta]", " ", "t"}]}], 
+          ")"}]}]]}]}]}]}], TraditionalForm], "\[IndentingNewLine]", 
+  FormBox[
+   RowBox[{"\[Proportional]", 
+    SuperscriptBox["\[ExponentialE]", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"-", 
+        FractionBox["1", "2"]}], 
+       SuperscriptBox[
+        RowBox[{"(", 
+         RowBox[{
+          StyleBox["z",
+           FontWeight->"Bold"], 
+          StyleBox["-",
+           FontWeight->"Plain"], 
+          StyleBox[
+           OverscriptBox[
+            StyleBox["z",
+             FontWeight->"Bold"], "_"],
+           FontWeight->"Bold"]}], ")"}], "T"], 
+       RowBox[{
+        SubsuperscriptBox[
+         StyleBox["\[CapitalSigma]",
+          FontWeight->"Bold"], "z", 
+         RowBox[{"-", "1"}]], "(", 
+        RowBox[{
+         StyleBox["z",
+          FontWeight->"Bold"], 
+         StyleBox["-",
+          FontWeight->"Plain"], 
+         StyleBox[
+          OverscriptBox[
+           StyleBox["z",
+            FontWeight->"Bold"], "_"],
+          FontWeight->"Bold"]}], ")"}]}], "-", 
+      RowBox[{
+       FractionBox["1", "2"], 
+       RowBox[{
+        UnderoverscriptBox["\[Sum]", 
+         RowBox[{
+          SuperscriptBox["n", "\[Prime]"], "=", "1"}], "n"], 
+        RowBox[{
+         SuperscriptBox[
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{"\[Delta]", " ", 
+             SubscriptBox[
+              StyleBox["x",
+               FontWeight->"Bold"], 
+              SuperscriptBox["n", "\[Prime]"]]}], "-", 
+            RowBox[{
+             StyleBox["z",
+              FontWeight->"Bold"], " ", "\[Delta]", " ", "t"}]}], ")"}], "T"], 
+         SuperscriptBox[
+          RowBox[{"(", 
+           RowBox[{
+            SubscriptBox[
+             StyleBox["\[CapitalSigma]",
+              FontWeight->"Bold"], "x"], "\[Delta]", " ", "t"}], ")"}], 
+          RowBox[{"-", "1"}]], 
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{"\[Delta]", " ", 
+            SubscriptBox[
+             StyleBox["x",
+              FontWeight->"Bold"], 
+             SuperscriptBox["n", "\[Prime]"]]}], "-", 
+           RowBox[{
+            StyleBox["z",
+             FontWeight->"Bold"], " ", "\[Delta]", " ", "t"}]}], 
+          ")"}]}]}]}]}]]}], TraditionalForm], "\[IndentingNewLine]", 
+  FormBox[
+   RowBox[{"\[Proportional]", 
+    SuperscriptBox["\[ExponentialE]", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"-", 
+        FractionBox["1", "2"]}], 
+       SuperscriptBox[
+        RowBox[{"(", 
+         RowBox[{
+          StyleBox["z",
+           FontWeight->"Bold"], 
+          StyleBox["-",
+           FontWeight->"Plain"], 
+          StyleBox[
+           OverscriptBox[
+            StyleBox["z",
+             FontWeight->"Bold"], "_"],
+           FontWeight->"Bold"]}], ")"}], "T"], 
+       RowBox[{
+        SubsuperscriptBox[
+         StyleBox["\[CapitalSigma]",
+          FontWeight->"Bold"], "z", 
+         RowBox[{"-", "1"}]], "(", 
+        RowBox[{
+         StyleBox["z",
+          FontWeight->"Bold"], 
+         StyleBox["-",
+          FontWeight->"Plain"], 
+         StyleBox[
+          OverscriptBox[
+           StyleBox["z",
+            FontWeight->"Bold"], "_"],
+          FontWeight->"Bold"]}], ")"}]}], "-", 
+      RowBox[{
+       FractionBox["1", "2"], 
+       SuperscriptBox[
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{
+           StyleBox["z",
+            FontWeight->"Bold"], " ", "\[Delta]", " ", "t"}], "-", 
+          RowBox[{
+           SuperscriptBox[
+            RowBox[{"(", 
+             RowBox[{"n", " ", 
+              SubsuperscriptBox[
+               StyleBox["\[CapitalSigma]",
+                FontWeight->"Bold"], "x", 
+               RowBox[{"-", "1"}]]}], ")"}], 
+            RowBox[{"-", "1"}]], 
+           RowBox[{"(", " ", 
+            SubsuperscriptBox[
+             StyleBox["\[CapitalSigma]",
+              FontWeight->"Bold"], "x", 
+             RowBox[{"-", "1"}]], ")"}], 
+           RowBox[{
+            UnderoverscriptBox["\[Sum]", 
+             RowBox[{
+              SuperscriptBox["n", "\[Prime]"], "=", "1"}], "n"], 
+            RowBox[{"\[Delta]", " ", 
+             SubscriptBox[
+              StyleBox["x",
+               FontWeight->"Bold"], 
+              SuperscriptBox["n", "\[Prime]"]]}]}]}]}], ")"}], "T"], 
+       SuperscriptBox[
+        RowBox[{"(", 
+         RowBox[{
+          SubscriptBox[
+           StyleBox["\[CapitalSigma]",
+            FontWeight->"Bold"], "x"], 
+          FractionBox["t", 
+           SuperscriptBox[
+            RowBox[{"(", 
+             RowBox[{"\[Delta]", " ", "t"}], ")"}], "2"]]}], ")"}], 
+        RowBox[{"-", "1"}]], 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{
+          StyleBox["z",
+           FontWeight->"Bold"], " ", "\[Delta]", " ", "t"}], "-", 
+         RowBox[{
+          SuperscriptBox[
+           RowBox[{"(", 
+            RowBox[{"n", " ", 
+             SubsuperscriptBox[
+              StyleBox["\[CapitalSigma]",
+               FontWeight->"Bold"], "x", 
+              RowBox[{"-", "1"}]]}], ")"}], 
+           RowBox[{"-", "1"}]], 
+          RowBox[{"(", " ", 
+           SubsuperscriptBox[
+            StyleBox["\[CapitalSigma]",
+             FontWeight->"Bold"], "x", 
+            RowBox[{"-", "1"}]], ")"}], 
+          RowBox[{
+           UnderoverscriptBox["\[Sum]", 
+            RowBox[{
+             SuperscriptBox["n", "\[Prime]"], "=", "1"}], "n"], 
+           RowBox[{"\[Delta]", " ", 
+            SubscriptBox[
+             StyleBox["x",
+              FontWeight->"Bold"], 
+             SuperscriptBox["n", "\[Prime]"]]}]}]}]}], ")"}]}]}]]}], 
+   TraditionalForm], "\[IndentingNewLine]", 
+  FormBox[
+   RowBox[{"\[Proportional]", 
+    SuperscriptBox["\[ExponentialE]", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"-", 
+        FractionBox["1", "2"]}], 
+       SuperscriptBox[
+        RowBox[{"(", 
+         RowBox[{
+          StyleBox["z",
+           FontWeight->"Bold"], 
+          StyleBox["-",
+           FontWeight->"Plain"], 
+          StyleBox[
+           OverscriptBox[
+            StyleBox["z",
+             FontWeight->"Bold"], "_"],
+           FontWeight->"Bold"]}], ")"}], "T"], 
+       RowBox[{
+        SubsuperscriptBox[
+         StyleBox["\[CapitalSigma]",
+          FontWeight->"Bold"], "z", 
+         RowBox[{"-", "1"}]], "(", 
+        RowBox[{
+         StyleBox["z",
+          FontWeight->"Bold"], 
+         StyleBox["-",
+          FontWeight->"Plain"], 
+         StyleBox[
+          OverscriptBox[
+           StyleBox["z",
+            FontWeight->"Bold"], "_"],
+          FontWeight->"Bold"]}], ")"}]}], "-", 
+      RowBox[{
+       FractionBox["1", "2"], 
+       SuperscriptBox[
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{
+           StyleBox["z",
+            FontWeight->"Bold"], " ", "\[Delta]", " ", "t"}], "-", 
+          RowBox[{
+           FractionBox[
+            RowBox[{"\[Delta]", " ", "t"}], "t"], " ", 
+           RowBox[{
+            StyleBox["x",
+             FontWeight->"Bold"], "(", "t", ")"}]}]}], ")"}], "T"], 
+       SuperscriptBox[
+        RowBox[{"(", 
+         RowBox[{
+          SubscriptBox[
+           StyleBox["\[CapitalSigma]",
+            FontWeight->"Bold"], "x"], 
+          FractionBox[
+           SuperscriptBox[
+            RowBox[{"(", 
+             RowBox[{"\[Delta]", " ", "t"}], ")"}], "2"], "t"]}], ")"}], 
+        RowBox[{"-", "1"}]], 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{
+          StyleBox["z",
+           FontWeight->"Bold"], " ", "\[Delta]", " ", "t"}], "-", 
+         RowBox[{
+          FractionBox[
+           RowBox[{"\[Delta]", " ", "t"}], "t"], " ", 
+          RowBox[{
+           StyleBox["x",
+            FontWeight->"Bold"], "(", "t", ")"}]}]}], ")"}]}]}]]}], 
+   TraditionalForm], "\[IndentingNewLine]", 
+  FormBox[
+   RowBox[{"\[Proportional]", 
+    SuperscriptBox["\[ExponentialE]", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"-", 
+        FractionBox["1", "2"]}], 
+       SuperscriptBox[
+        RowBox[{"(", 
+         RowBox[{
+          StyleBox["z",
+           FontWeight->"Bold"], 
+          StyleBox["-",
+           FontWeight->"Plain"], 
+          StyleBox[
+           OverscriptBox[
+            StyleBox["z",
+             FontWeight->"Bold"], "_"],
+           FontWeight->"Bold"]}], ")"}], "T"], 
+       RowBox[{
+        SubsuperscriptBox[
+         StyleBox["\[CapitalSigma]",
+          FontWeight->"Bold"], "z", 
+         RowBox[{"-", "1"}]], "(", 
+        RowBox[{
+         StyleBox["z",
+          FontWeight->"Bold"], 
+         StyleBox["-",
+          FontWeight->"Plain"], 
+         StyleBox[
+          OverscriptBox[
+           StyleBox["z",
+            FontWeight->"Bold"], "_"],
+          FontWeight->"Bold"]}], ")"}]}], "-", 
+      RowBox[{
+       FractionBox["1", "2"], 
+       SuperscriptBox[
+        RowBox[{"(", 
+         RowBox[{
+          StyleBox["z",
+           FontWeight->"Bold"], " ", "-", 
+          RowBox[{
+           FractionBox["1", "t"], " ", 
+           RowBox[{
+            StyleBox["x",
+             FontWeight->"Bold"], "(", "t", ")"}]}]}], ")"}], "T"], 
+       SuperscriptBox[
+        RowBox[{"(", 
+         SubscriptBox[
+          StyleBox["\[CapitalSigma]",
+           FontWeight->"Bold"], "x"], ")"}], 
+        RowBox[{"-", "1"}]], 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{
+          StyleBox["z",
+           FontWeight->"Bold"], " ", "t"}], "-", " ", 
+         RowBox[{
+          StyleBox["x",
+           FontWeight->"Bold"], "(", "t", ")"}]}], ")"}]}]}]]}], 
+   TraditionalForm], "\[IndentingNewLine]", 
+  FormBox[
+   RowBox[{"\[Proportional]", 
+    SuperscriptBox["\[ExponentialE]", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"-", 
+        FractionBox["1", "2"]}], 
+       SuperscriptBox[
+        RowBox[{"(", 
+         RowBox[{
+          StyleBox["z",
+           FontWeight->"Bold"], 
+          StyleBox["-",
+           FontWeight->"Plain"], 
+          StyleBox[
+           OverscriptBox[
+            StyleBox["z",
+             FontWeight->"Bold"], "_"],
+           FontWeight->"Bold"]}], ")"}], "T"], 
+       RowBox[{
+        SubsuperscriptBox[
+         StyleBox["\[CapitalSigma]",
+          FontWeight->"Bold"], "z", 
+         RowBox[{"-", "1"}]], "(", 
+        RowBox[{
+         StyleBox["z",
+          FontWeight->"Bold"], 
+         StyleBox["-",
+          FontWeight->"Plain"], 
+         StyleBox[
+          OverscriptBox[
+           StyleBox["z",
+            FontWeight->"Bold"], "_"],
+          FontWeight->"Bold"]}], ")"}]}], "-", 
+      RowBox[{
+       FractionBox["1", "2"], 
+       SuperscriptBox[
+        RowBox[{"(", 
+         RowBox[{
+          StyleBox["z",
+           FontWeight->"Bold"], 
+          StyleBox["-",
+           FontWeight->"Plain"], " ", 
+          FractionBox[
+           RowBox[{
+            StyleBox["x",
+             FontWeight->"Bold"], 
+            StyleBox["(",
+             FontWeight->"Plain"], 
+            StyleBox["t",
+             FontWeight->"Plain"], 
+            StyleBox[")",
+             FontWeight->"Plain"]}], "t"]}], ")"}], "T"], "t", " ", 
+       RowBox[{
+        SubsuperscriptBox[
+         StyleBox["\[CapitalSigma]",
+          FontWeight->"Bold"], "x", 
+         RowBox[{"-", "1"}]], "(", 
+        RowBox[{
+         StyleBox["z",
+          FontWeight->"Bold"], 
+         StyleBox["-",
+          FontWeight->"Plain"], 
+         FractionBox[
+          RowBox[{
+           StyleBox["x",
+            FontWeight->"Bold"], 
+           StyleBox["(",
+            FontWeight->"Plain"], 
+           StyleBox["t",
+            FontWeight->"Plain"], 
+           StyleBox[")",
+            FontWeight->"Plain"]}], "t"]}], ")"}]}]}]]}], 
+   TraditionalForm], "\[IndentingNewLine]", 
+  FormBox[
+   RowBox[{"\[Proportional]", 
+    SuperscriptBox["\[ExponentialE]", 
+     RowBox[{
+      RowBox[{"-", 
+       FractionBox["1", "2"]}], 
+      SuperscriptBox[
+       RowBox[{"(", 
+        RowBox[{
+         StyleBox["z",
+          FontWeight->"Bold"], 
+         StyleBox["-",
+          FontWeight->"Plain"], 
+         RowBox[{
+          SuperscriptBox[
+           RowBox[{"(", 
+            RowBox[{
+             SubsuperscriptBox[
+              StyleBox["\[CapitalSigma]",
+               FontWeight->"Bold"], "z", 
+              RowBox[{"-", "1"}]], "+", 
+             RowBox[{"t", " ", 
+              SubsuperscriptBox[
+               StyleBox["\[CapitalSigma]",
+                FontWeight->"Bold"], "x", 
+               RowBox[{"-", "1"}]]}]}], ")"}], 
+           RowBox[{"-", "1"}]], 
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{
+             SubsuperscriptBox[
+              StyleBox["\[CapitalSigma]",
+               FontWeight->"Bold"], "z", 
+              RowBox[{"-", "1"}]], 
+             StyleBox[
+              OverscriptBox[
+               StyleBox["z",
+                FontWeight->"Bold"], "_"],
+              FontWeight->"Bold"]}], "+", 
+            RowBox[{"t", " ", 
+             SubsuperscriptBox[
+              StyleBox["\[CapitalSigma]",
+               FontWeight->"Bold"], "x", 
+              RowBox[{"-", "1"}]], 
+             FractionBox[
+              RowBox[{
+               StyleBox["x",
+                FontWeight->"Bold"], 
+               StyleBox["(",
+                FontWeight->"Plain"], 
+               StyleBox["t",
+                FontWeight->"Plain"], 
+               StyleBox[")",
+                FontWeight->"Plain"]}], "t"]}]}], ")"}]}]}], ")"}], "T"], 
+      RowBox[{"(", 
+       RowBox[{
+        SubsuperscriptBox[
+         StyleBox["\[CapitalSigma]",
+          FontWeight->"Bold"], "z", 
+         RowBox[{"-", "1"}]], "+", 
+        RowBox[{"t", " ", 
+         SubsuperscriptBox[
+          StyleBox["\[CapitalSigma]",
+           FontWeight->"Bold"], "x", 
+          RowBox[{"-", "1"}]]}]}], ")"}], 
+      RowBox[{"(", 
+       RowBox[{
+        StyleBox["z",
+         FontWeight->"Bold"], 
+        StyleBox["-",
+         FontWeight->"Plain"], 
+        RowBox[{
+         SuperscriptBox[
+          RowBox[{"(", 
+           RowBox[{
+            SubsuperscriptBox[
+             StyleBox["\[CapitalSigma]",
+              FontWeight->"Bold"], "z", 
+             RowBox[{"-", "1"}]], "+", 
+            RowBox[{"t", " ", 
+             SubsuperscriptBox[
+              StyleBox["\[CapitalSigma]",
+               FontWeight->"Bold"], "x", 
+              RowBox[{"-", "1"}]]}]}], ")"}], 
+          RowBox[{"-", "1"}]], 
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{
+            SubsuperscriptBox[
+             StyleBox["\[CapitalSigma]",
+              FontWeight->"Bold"], "z", 
+             RowBox[{"-", "1"}]], 
+            StyleBox[
+             OverscriptBox[
+              StyleBox["z",
+               FontWeight->"Bold"], "_"],
+             FontWeight->"Bold"]}], "+", 
+           RowBox[{"t", " ", 
+            SubsuperscriptBox[
+             StyleBox["\[CapitalSigma]",
+              FontWeight->"Bold"], "x", 
+             RowBox[{"-", "1"}]], 
+            FractionBox[
+             RowBox[{
+              StyleBox["x",
+               FontWeight->"Bold"], 
+              StyleBox["(",
+               FontWeight->"Plain"], 
+              StyleBox["t",
+               FontWeight->"Plain"], 
+              StyleBox[")",
+               FontWeight->"Plain"]}], "t"]}]}], ")"}]}]}], ")"}]}]]}], 
+   TraditionalForm], "\[IndentingNewLine]", 
+  FormBox[
+   RowBox[{"\[Proportional]", 
+    SuperscriptBox["\[ExponentialE]", 
+     RowBox[{
+      RowBox[{"-", 
+       FractionBox["1", "2"]}], 
+      SuperscriptBox[
+       RowBox[{"(", 
+        RowBox[{
+         StyleBox["z",
+          FontWeight->"Bold"], 
+         StyleBox["-",
+          FontWeight->"Plain"], 
+         RowBox[{
+          RowBox[{
+           StyleBox["\[CapitalSigma]",
+            FontWeight->"Bold"], 
+           StyleBox["(",
+            FontWeight->"Plain"], 
+           StyleBox["t",
+            FontWeight->"Plain"], 
+           StyleBox[")",
+            FontWeight->"Plain"]}], 
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{
+             SubsuperscriptBox[
+              StyleBox["\[CapitalSigma]",
+               FontWeight->"Bold"], "z", 
+              RowBox[{"-", "1"}]], 
+             StyleBox[
+              OverscriptBox[
+               StyleBox["z",
+                FontWeight->"Bold"], "_"],
+              FontWeight->"Bold"]}], "+", " ", 
+            RowBox[{
+             SubsuperscriptBox[
+              StyleBox["\[CapitalSigma]",
+               FontWeight->"Bold"], "x", 
+              RowBox[{"-", "1"}]], 
+             RowBox[{
+              StyleBox["x",
+               FontWeight->"Bold"], 
+              StyleBox["(",
+               FontWeight->"Plain"], 
+              StyleBox["t",
+               FontWeight->"Plain"], 
+              StyleBox[")",
+               FontWeight->"Plain"]}]}]}], ")"}]}]}], ")"}], "T"], 
+      RowBox[{"(", 
+       RowBox[{
+        SubsuperscriptBox[
+         StyleBox["\[CapitalSigma]",
+          FontWeight->"Bold"], "z", 
+         RowBox[{"-", "1"}]], "+", 
+        RowBox[{"t", " ", 
+         SubsuperscriptBox[
+          StyleBox["\[CapitalSigma]",
+           FontWeight->"Bold"], "x", 
+          RowBox[{"-", "1"}]]}]}], ")"}], 
+      RowBox[{"(", 
+       RowBox[{
+        StyleBox["z",
+         FontWeight->"Bold"], 
+        StyleBox["-",
+         FontWeight->"Plain"], 
+        RowBox[{
+         RowBox[{
+          StyleBox["\[CapitalSigma]",
+           FontWeight->"Bold"], 
+          StyleBox["(",
+           FontWeight->"Plain"], 
+          StyleBox["t",
+           FontWeight->"Plain"], 
+          StyleBox[")",
+           FontWeight->"Plain"]}], 
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{
+            SubsuperscriptBox[
+             StyleBox["\[CapitalSigma]",
+              FontWeight->"Bold"], "z", 
+             RowBox[{"-", "1"}]], 
+            StyleBox[
+             OverscriptBox[
+              StyleBox["z",
+               FontWeight->"Bold"], "_"],
+             FontWeight->"Bold"]}], "+", " ", 
+           RowBox[{
+            SubsuperscriptBox[
+             StyleBox["\[CapitalSigma]",
+              FontWeight->"Bold"], "x", 
+             RowBox[{"-", "1"}]], 
+            RowBox[{
+             StyleBox["x",
+              FontWeight->"Bold"], 
+             StyleBox["(",
+              FontWeight->"Plain"], 
+             StyleBox["t",
+              FontWeight->"Plain"], 
+             StyleBox[")",
+              FontWeight->"Plain"]}]}]}], ")"}]}]}], ")"}]}]]}], 
+   TraditionalForm], "\[IndentingNewLine]", 
+  FormBox[
+   RowBox[{"\[Proportional]", 
+    SuperscriptBox["\[ExponentialE]", 
+     RowBox[{
+      RowBox[{"-", 
+       FractionBox["1", "2"]}], 
+      SuperscriptBox[
+       RowBox[{"(", 
+        RowBox[{
+         StyleBox["z",
+          FontWeight->"Bold"], 
+         StyleBox["-",
+          FontWeight->"Plain"], 
+         RowBox[{
+          RowBox[{
+           StyleBox["\[CapitalSigma]",
+            FontWeight->"Bold"], 
+           StyleBox["(",
+            FontWeight->"Plain"], 
+           StyleBox["t",
+            FontWeight->"Plain"], 
+           StyleBox[")",
+            FontWeight->"Plain"]}], 
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{
+             SubsuperscriptBox[
+              StyleBox["\[CapitalSigma]",
+               FontWeight->"Bold"], "z", 
+              RowBox[{"-", "1"}]], 
+             StyleBox[
+              OverscriptBox[
+               StyleBox["z",
+                FontWeight->"Bold"], "_"],
+              FontWeight->"Bold"]}], "+", " ", 
+            RowBox[{
+             SubsuperscriptBox[
+              StyleBox["\[CapitalSigma]",
+               FontWeight->"Bold"], "x", 
+              RowBox[{"-", "1"}]], 
+             RowBox[{
+              StyleBox["x",
+               FontWeight->"Bold"], 
+              StyleBox["(",
+               FontWeight->"Plain"], 
+              StyleBox["t",
+               FontWeight->"Plain"], 
+              StyleBox[")",
+               FontWeight->"Plain"]}]}]}], ")"}]}]}], ")"}], "T"], 
+      SuperscriptBox[
+       RowBox[{
+        StyleBox["\[CapitalSigma]",
+         FontWeight->"Bold"], "(", "t", ")"}], 
+       RowBox[{"-", "1"}]], 
+      RowBox[{"(", 
+       RowBox[{
+        StyleBox["z",
+         FontWeight->"Bold"], "-", 
+        RowBox[{
+         RowBox[{"\[CapitalSigma]", "(", "t", ")"}], 
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{
+            SubsuperscriptBox["\[CapitalSigma]", "z", 
+             RowBox[{"-", "1"}]], 
+            StyleBox[
+             OverscriptBox[
+              StyleBox["z",
+               FontWeight->"Bold"], "_"],
+             FontWeight->"Bold"]}], "+", " ", 
+           RowBox[{
+            SubsuperscriptBox[
+             StyleBox["\[CapitalSigma]",
+              FontWeight->"Bold"], "x", 
+             RowBox[{"-", "1"}]], 
+            RowBox[{
+             StyleBox["x",
+              FontWeight->"Bold"], 
+             StyleBox["(",
+              FontWeight->"Plain"], 
+             StyleBox["t",
+              FontWeight->"Plain"], 
+             StyleBox[")",
+              FontWeight->"Plain"]}]}]}], ")"}]}]}], ")"}]}]]}], 
+   TraditionalForm]}],ExpressionUUID->
+  "f70249d2-338c-4158-bc7e-c11f0c041592"],
+ "\nDefine ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     StyleBox["\[CapitalSigma]",
+      FontWeight->"Bold"], "(", "t", ")"}], "\[Congruent]", 
+    SuperscriptBox[
+     RowBox[{"(", 
+      RowBox[{
+       SubsuperscriptBox[
+        StyleBox["\[CapitalSigma]",
+         FontWeight->"Bold"], "z", 
+        RowBox[{"-", "1"}]], "+", 
+       RowBox[{"t", " ", 
+        SubsuperscriptBox[
+         StyleBox["\[CapitalSigma]",
+          FontWeight->"Bold"], "x", 
+         RowBox[{"-", "1"}]]}]}], ")"}], 
+     RowBox[{"-", "1"}]]}], TraditionalForm]],ExpressionUUID->
+  "69976f99-83f5-46cf-8263-8bc5c9fec47a"],
+ "\nHence ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"p", "(", 
+     RowBox[{
+      RowBox[{
+       StyleBox["z",
+        FontWeight->"Bold"], 
+       StyleBox["|",
+        FontWeight->"Plain"], 
+       RowBox[{
+        StyleBox["\[Delta]",
+         FontWeight->"Plain"], 
+        StyleBox[" ",
+         FontWeight->"Plain"], 
+        SubscriptBox[
+         StyleBox["x",
+          FontWeight->"Bold"], "1"]}]}], ",", "\[Ellipsis]", ",", 
+      RowBox[{
+       StyleBox["\[Delta]",
+        FontWeight->"Plain"], 
+       StyleBox[" ",
+        FontWeight->"Plain"], 
+       SubscriptBox[
+        StyleBox["x",
+         FontWeight->"Bold"], "n"]}]}], ")"}], "\[Distributed]", 
+    RowBox[{"\[ScriptCapitalN]", "(", 
+     RowBox[{
+      RowBox[{
+       RowBox[{
+        StyleBox["\[CapitalSigma]",
+         FontWeight->"Bold"], 
+        StyleBox["(",
+         FontWeight->"Plain"], 
+        StyleBox["t",
+         FontWeight->"Plain"], 
+        StyleBox[")",
+         FontWeight->"Plain"]}], 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{
+          SubsuperscriptBox[
+           StyleBox["\[CapitalSigma]",
+            FontWeight->"Bold"], "z", 
+           RowBox[{"-", "1"}]], 
+          StyleBox[
+           OverscriptBox[
+            StyleBox["z",
+             FontWeight->"Bold"], "_"],
+           FontWeight->"Bold"]}], "+", " ", 
+         RowBox[{
+          SubsuperscriptBox[
+           StyleBox["\[CapitalSigma]",
+            FontWeight->"Bold"], "x", 
+           RowBox[{"-", "1"}]], 
+          RowBox[{
+           StyleBox["x",
+            FontWeight->"Bold"], 
+           StyleBox["(",
+            FontWeight->"Plain"], 
+           StyleBox["t",
+            FontWeight->"Plain"], 
+           StyleBox[")",
+            FontWeight->"Plain"]}]}]}], ")"}]}], ",", 
+      RowBox[{
+       StyleBox["\[CapitalSigma]",
+        FontWeight->"Bold"], "(", "t", ")"}]}], ")"}]}], TraditionalForm]],
+  ExpressionUUID->"da6d5db4-9356-4d07-b875-a70a7a4eaa75"],
+ "\n[Note: in ",
+ StyleBox["\[OpenCurlyDoubleQuote]matrixcookbook\[CloseCurlyDoubleQuote]",
+  FontSlant->"Italic"],
+ "  8.1.7 sum of two squared forms]\n[Note:",
+ Cell[BoxData[{
+  FormBox[
+   RowBox[{
+    UnderoverscriptBox["\[Sum]", 
+     RowBox[{
+      SuperscriptBox["n", "\[Prime]"], "=", "1"}], "n"], 
+    RowBox[{
+     SuperscriptBox[
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{
+         StyleBox["z",
+          FontWeight->"Bold"], " ", "\[Delta]", " ", "t"}], "-", 
+        RowBox[{"\[Delta]", " ", 
+         SubscriptBox[
+          StyleBox["x",
+           FontWeight->"Bold"], 
+          SuperscriptBox["n", "\[Prime]"]]}]}], ")"}], "T"], 
+     SuperscriptBox[
+      RowBox[{"(", 
+       RowBox[{
+        SubscriptBox[
+         StyleBox["\[CapitalSigma]",
+          FontWeight->"Bold"], "x"], "\[Delta]", " ", "t"}], ")"}], 
+      RowBox[{"-", "1"}]], 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{
+        StyleBox["z",
+         FontWeight->"Bold"], " ", "\[Delta]", " ", "t"}], "-", 
+       RowBox[{"\[Delta]", " ", 
+        SubscriptBox[
+         StyleBox["x",
+          FontWeight->"Bold"], 
+         SuperscriptBox["n", "\[Prime]"]]}]}], ")"}]}]}], 
+   TraditionalForm], "\[IndentingNewLine]", 
+  FormBox[
+   RowBox[{"=", 
+    RowBox[{
+     RowBox[{
+      SuperscriptBox[
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{
+          StyleBox["z",
+           FontWeight->"Bold"], 
+          StyleBox[" ",
+           FontWeight->"Bold"], 
+          StyleBox["\[Delta]",
+           FontWeight->"Plain"], 
+          StyleBox[" ",
+           FontWeight->"Plain"], 
+          StyleBox["t",
+           FontWeight->"Plain"]}], 
+         StyleBox["-",
+          FontWeight->"Plain"], 
+         RowBox[{
+          SuperscriptBox[
+           RowBox[{"(", 
+            RowBox[{"n", " ", 
+             SuperscriptBox[
+              RowBox[{"(", 
+               RowBox[{"\[Delta]", " ", "t", " ", 
+                SubscriptBox[
+                 StyleBox["\[CapitalSigma]",
+                  FontWeight->"Bold"], "x"]}], ")"}], 
+              RowBox[{"-", "1"}]]}], ")"}], 
+           RowBox[{"-", "1"}]], 
+          RowBox[{"(", 
+           RowBox[{
+            UnderoverscriptBox["\[Sum]", 
+             RowBox[{
+              SuperscriptBox["n", "\[Prime]"], "=", "1"}], "n"], 
+            RowBox[{
+             SuperscriptBox[
+              RowBox[{"(", 
+               RowBox[{"\[Delta]", " ", "t", " ", 
+                SubscriptBox[
+                 StyleBox["\[CapitalSigma]",
+                  FontWeight->"Bold"], "x"]}], ")"}], 
+              RowBox[{"-", "1"}]], "\[Delta]", " ", 
+             SubscriptBox[
+              StyleBox["x",
+               FontWeight->"Bold"], 
+              SuperscriptBox["n", "\[Prime]"]]}]}], ")"}]}]}], ")"}], "T"], 
+      RowBox[{"(", 
+       RowBox[{"n", " ", 
+        SuperscriptBox[
+         RowBox[{"(", 
+          RowBox[{"\[Delta]", " ", "t", " ", 
+           SubscriptBox[
+            StyleBox["\[CapitalSigma]",
+             FontWeight->"Bold"], "x"]}], ")"}], 
+         RowBox[{"-", "1"}]]}], ")"}], 
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{
+         StyleBox["z",
+          FontWeight->"Bold"], 
+         StyleBox[" ",
+          FontWeight->"Bold"], 
+         StyleBox["\[Delta]",
+          FontWeight->"Plain"], 
+         StyleBox[" ",
+          FontWeight->"Plain"], 
+         StyleBox["t",
+          FontWeight->"Plain"]}], 
+        StyleBox["-",
+         FontWeight->"Plain"], 
+        RowBox[{
+         SuperscriptBox[
+          RowBox[{"(", 
+           RowBox[{"n", " ", 
+            SuperscriptBox[
+             RowBox[{"(", 
+              RowBox[{"\[Delta]", " ", "t", " ", 
+               SubscriptBox[
+                StyleBox["\[CapitalSigma]",
+                 FontWeight->"Bold"], "x"]}], ")"}], 
+             RowBox[{"-", "1"}]]}], ")"}], 
+          RowBox[{"-", "1"}]], 
+         RowBox[{"(", 
+          RowBox[{
+           UnderoverscriptBox["\[Sum]", 
+            RowBox[{
+             SuperscriptBox["n", "\[Prime]"], "=", "1"}], "n"], 
+           RowBox[{
+            SuperscriptBox[
+             RowBox[{"(", 
+              RowBox[{"\[Delta]", " ", "t", " ", 
+               SubscriptBox[
+                StyleBox["\[CapitalSigma]",
+                 FontWeight->"Bold"], "x"]}], ")"}], 
+             RowBox[{"-", "1"}]], "\[Delta]", " ", 
+            SubscriptBox[
+             StyleBox["x",
+              FontWeight->"Bold"], 
+             SuperscriptBox["n", "\[Prime]"]]}]}], ")"}]}]}], ")"}]}], "+", 
+     "C"}]}], TraditionalForm], "\[IndentingNewLine]", 
+  FormBox[
+   RowBox[{"=", 
+    RowBox[{
+     RowBox[{
+      SuperscriptBox[
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{
+          StyleBox["z",
+           FontWeight->"Bold"], 
+          StyleBox[" ",
+           FontWeight->"Bold"], 
+          StyleBox["\[Delta]",
+           FontWeight->"Plain"], 
+          StyleBox[" ",
+           FontWeight->"Plain"], 
+          StyleBox["t",
+           FontWeight->"Plain"]}], 
+         StyleBox["-",
+          FontWeight->"Plain"], 
+         RowBox[{
+          SuperscriptBox[
+           RowBox[{"(", 
+            RowBox[{"n", " ", 
+             SuperscriptBox[
+              RowBox[{"(", 
+               RowBox[{"\[Delta]", " ", "t", " ", 
+                SubscriptBox[
+                 StyleBox["\[CapitalSigma]",
+                  FontWeight->"Bold"], "x"]}], ")"}], 
+              RowBox[{"-", "1"}]]}], ")"}], 
+           RowBox[{"-", "1"}]], 
+          RowBox[{"(", 
+           RowBox[{
+            SuperscriptBox[
+             RowBox[{"(", 
+              RowBox[{"\[Delta]", " ", "t", " ", 
+               SubscriptBox[
+                StyleBox["\[CapitalSigma]",
+                 FontWeight->"Bold"], "x"]}], ")"}], 
+             RowBox[{"-", "1"}]], " ", 
+            RowBox[{
+             StyleBox["x",
+              FontWeight->"Bold"], 
+             StyleBox["(",
+              FontWeight->"Plain"], 
+             StyleBox["t",
+              FontWeight->"Plain"], 
+             StyleBox[")",
+              FontWeight->"Plain"]}]}], ")"}]}]}], ")"}], "T"], 
+      RowBox[{"(", 
+       RowBox[{"n", " ", 
+        SuperscriptBox[
+         RowBox[{"(", 
+          RowBox[{"\[Delta]", " ", "t", " ", 
+           SubscriptBox[
+            StyleBox["\[CapitalSigma]",
+             FontWeight->"Bold"], "x"]}], ")"}], 
+         RowBox[{"-", "1"}]]}], ")"}], 
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{
+         StyleBox["z",
+          FontWeight->"Bold"], 
+         StyleBox[" ",
+          FontWeight->"Bold"], 
+         StyleBox["\[Delta]",
+          FontWeight->"Plain"], 
+         StyleBox[" ",
+          FontWeight->"Plain"], 
+         StyleBox["t",
+          FontWeight->"Plain"]}], 
+        StyleBox["-",
+         FontWeight->"Plain"], 
+        RowBox[{
+         SuperscriptBox[
+          RowBox[{"(", 
+           RowBox[{"n", " ", 
+            SuperscriptBox[
+             RowBox[{"(", 
+              RowBox[{"\[Delta]", " ", 
+               SubscriptBox[
+                StyleBox[
+                 RowBox[{"t", 
+                  StyleBox["\[CapitalSigma]",
+                   FontWeight->"Bold"]}]], "x"]}], ")"}], 
+             RowBox[{"-", "1"}]]}], ")"}], 
+          RowBox[{"-", "1"}]], 
+         RowBox[{"(", 
+          RowBox[{
+           SuperscriptBox[
+            RowBox[{"(", 
+             RowBox[{"\[Delta]", " ", "t", " ", 
+              SubscriptBox[
+               StyleBox["\[CapitalSigma]",
+                FontWeight->"Bold"], "x"]}], ")"}], 
+            RowBox[{"-", "1"}]], " ", 
+           RowBox[{
+            StyleBox["x",
+             FontWeight->"Bold"], 
+            StyleBox["(",
+             FontWeight->"Plain"], 
+            StyleBox["t",
+             FontWeight->"Plain"], 
+            StyleBox[")",
+             FontWeight->"Plain"]}]}], ")"}]}]}], ")"}]}], "+", "C"}]}], 
+   TraditionalForm], "\[IndentingNewLine]", 
+  FormBox[
+   RowBox[{"=", 
+    RowBox[{
+     RowBox[{
+      SuperscriptBox[
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{
+          StyleBox["z",
+           FontWeight->"Bold"], 
+          StyleBox[" ",
+           FontWeight->"Bold"], 
+          StyleBox["\[Delta]",
+           FontWeight->"Plain"], 
+          StyleBox[" ",
+           FontWeight->"Plain"], 
+          StyleBox["t",
+           FontWeight->"Plain"]}], 
+         StyleBox["-",
+          FontWeight->"Plain"], 
+         FractionBox[
+          RowBox[{" ", 
+           RowBox[{
+            StyleBox["x",
+             FontWeight->"Bold"], 
+            StyleBox[
+             RowBox[{"(", "t", ")"}],
+             FontWeight->"Plain"]}]}], "n"]}], ")"}], "T"], 
+      RowBox[{"(", 
+       RowBox[{
+        FractionBox["n", 
+         RowBox[{"\[Delta]", " ", "t"}]], " ", 
+        SubsuperscriptBox[
+         StyleBox["\[CapitalSigma]",
+          FontWeight->"Bold"], "x", 
+         RowBox[{"-", "1"}]]}], ")"}], 
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{
+         StyleBox["z",
+          FontWeight->"Bold"], 
+         StyleBox[" ",
+          FontWeight->"Bold"], 
+         StyleBox["\[Delta]",
+          FontWeight->"Plain"], 
+         StyleBox[" ",
+          FontWeight->"Plain"], 
+         StyleBox["t",
+          FontWeight->"Plain"]}], 
+        StyleBox["-",
+         FontWeight->"Plain"], 
+        FractionBox[
+         RowBox[{
+          StyleBox["x",
+           FontWeight->"Bold"], 
+          StyleBox["(",
+           FontWeight->"Plain"], 
+          StyleBox["t",
+           FontWeight->"Plain"], 
+          StyleBox[")",
+           FontWeight->"Plain"]}], "n"]}], ")"}]}], "+", "C"}]}], 
+   TraditionalForm], "\[IndentingNewLine]", 
+  FormBox[
+   RowBox[{"=", 
+    RowBox[{
+     RowBox[{
+      SuperscriptBox[
+       RowBox[{"(", 
+        RowBox[{
+         StyleBox["z",
+          FontWeight->"Bold"], 
+         StyleBox[" ",
+          FontWeight->"Plain"], 
+         StyleBox["-",
+          FontWeight->"Plain"], " ", 
+         FractionBox[
+          RowBox[{
+           StyleBox["x",
+            FontWeight->"Bold"], 
+           StyleBox[
+            RowBox[{"(", "t", ")"}],
+            FontWeight->"Plain"]}], 
+          RowBox[{"\[Delta]", " ", "t", " ", "n"}]]}], ")"}], "T"], "n", " ", 
+      "\[Delta]", " ", "t", " ", 
+      RowBox[{
+       SubsuperscriptBox[
+        StyleBox["\[CapitalSigma]",
+         FontWeight->"Bold"], "x", 
+        RowBox[{"-", "1"}]], "(", 
+       RowBox[{
+        StyleBox["z",
+         FontWeight->"Bold"], 
+        StyleBox[" ",
+         FontWeight->"Bold"], 
+        StyleBox["-",
+         FontWeight->"Plain"], 
+        FractionBox[
+         RowBox[{
+          StyleBox["x",
+           FontWeight->"Bold"], 
+          StyleBox["(",
+           FontWeight->"Plain"], 
+          StyleBox["t",
+           FontWeight->"Plain"], 
+          StyleBox[")",
+           FontWeight->"Plain"]}], 
+         RowBox[{"n", " ", "\[Delta]", " ", "t"}]]}], ")"}]}], "+", "C"}]}], 
+   TraditionalForm], "\[IndentingNewLine]", 
+  FormBox[
+   RowBox[{"=", 
+    RowBox[{
+     RowBox[{
+      SuperscriptBox[
+       RowBox[{"(", 
+        RowBox[{
+         StyleBox["z",
+          FontWeight->"Bold"], 
+         StyleBox["-",
+          FontWeight->"Plain"], " ", 
+         FractionBox[
+          RowBox[{
+           StyleBox["x",
+            FontWeight->"Bold"], 
+           StyleBox["(",
+            FontWeight->"Plain"], 
+           StyleBox["t",
+            FontWeight->"Plain"], 
+           StyleBox[")",
+            FontWeight->"Plain"]}], "t"]}], ")"}], "T"], "t", " ", 
+      RowBox[{
+       SubsuperscriptBox[
+        StyleBox["\[CapitalSigma]",
+         FontWeight->"Bold"], "x", 
+        RowBox[{"-", "1"}]], "(", 
+       RowBox[{
+        StyleBox["z",
+         FontWeight->"Bold"], 
+        StyleBox["-",
+         FontWeight->"Plain"], 
+        FractionBox[
+         RowBox[{
+          StyleBox["x",
+           FontWeight->"Bold"], 
+          StyleBox["(",
+           FontWeight->"Plain"], 
+          StyleBox["t",
+           FontWeight->"Plain"], 
+          StyleBox[")",
+           FontWeight->"Plain"]}], "t"]}], ")"}]}], "+", "C"}]}], 
+   TraditionalForm]}],ExpressionUUID->
+  "34e3f619-8dae-4159-9a75-4fde326a6f95"],
+ "]\n\nFor ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    StyleBox["r",
+     FontWeight->"Bold"], "=", 
+    StyleBox["z",
+     FontWeight->"Bold"]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "fe2388d9-48e3-4451-a752-3de6172edb8a"],
+ " in value decision making, ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    StyleBox[
+     OverscriptBox["r", "^"],
+     FontWeight->"Bold"], 
+    StyleBox["=",
+     FontWeight->"Plain"], 
+    RowBox[{
+     RowBox[{"\[LeftAngleBracket]", 
+      RowBox[{
+       RowBox[{
+        StyleBox["z",
+         FontWeight->"Bold"], "|", 
+        RowBox[{"\[Delta]", " ", 
+         SubscriptBox[
+          StyleBox["x",
+           FontWeight->"Bold"], "1"]}]}], ",", "\[Ellipsis]", ",", 
+       RowBox[{"\[Delta]", " ", 
+        SubscriptBox[
+         StyleBox["x",
+          FontWeight->"Bold"], "n"]}]}], "\[RightAngleBracket]"}], "=", 
+     RowBox[{
+      RowBox[{
+       StyleBox["\[CapitalSigma]",
+        FontWeight->"Bold"], 
+       StyleBox["(",
+        FontWeight->"Plain"], 
+       StyleBox["t",
+        FontWeight->"Plain"], 
+       StyleBox[")",
+        FontWeight->"Plain"]}], 
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{
+         SubsuperscriptBox[
+          StyleBox["\[CapitalSigma]",
+           FontWeight->"Bold"], "z", 
+          RowBox[{"-", "1"}]], 
+         StyleBox[
+          OverscriptBox[
+           StyleBox["z",
+            FontWeight->"Bold"], "_"],
+          FontWeight->"Bold"]}], "+", " ", 
+        RowBox[{
+         SubsuperscriptBox[
+          StyleBox["\[CapitalSigma]",
+           FontWeight->"Bold"], "x", 
+          RowBox[{"-", "1"}]], 
+         RowBox[{
+          StyleBox["x",
+           FontWeight->"Bold"], 
+          StyleBox["(",
+           FontWeight->"Plain"], 
+          StyleBox["t",
+           FontWeight->"Plain"], 
+          StyleBox[")",
+           FontWeight->"Plain"]}]}]}], ")"}]}]}]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "bcd002c2-dd72-4e07-98fe-d4cb503750c7"],
+ "\n\n",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"\[ScriptCapitalP]", "(", " ", 
+     RowBox[{
+      SubscriptBox[
+       StyleBox[
+        OverscriptBox[
+         StyleBox["r",
+          FontWeight->"Bold"], "^"],
+        FontWeight->"Bold"], 
+       RowBox[{"n", "+", "1"}]], "|", 
+      StyleBox[
+       OverscriptBox[
+        StyleBox["r",
+         FontWeight->"Bold"], "^"],
+       FontWeight->"Bold"]}], ")"}], "=", 
+    RowBox[{"\[Integral]", 
+     RowBox[{
+      RowBox[{"\[ScriptCapitalP]", "(", 
+       RowBox[{
+        RowBox[{
+         SubscriptBox[
+          StyleBox[
+           OverscriptBox[
+            StyleBox["r",
+             FontWeight->"Bold"], "^"],
+           FontWeight->"Bold"], 
+          RowBox[{"n", "+", "1"}]], "|", 
+         RowBox[{"\[Delta]", " ", 
+          SubscriptBox[
+           StyleBox["x",
+            FontWeight->"Bold"], 
+           RowBox[{"n", "+", "1"}]]}]}], ",", 
+        StyleBox[
+         OverscriptBox[
+          StyleBox["r",
+           FontWeight->"Bold"], "^"],
+         FontWeight->"Bold"]}], ")"}], 
+      RowBox[{"\[ScriptCapitalP]", "(", 
+       RowBox[{
+        RowBox[{"\[Delta]", " ", 
+         SubscriptBox[
+          StyleBox["x",
+           FontWeight->"Bold"], 
+          RowBox[{"n", "+", "1"}]]}], "|", 
+        StyleBox[
+         OverscriptBox[
+          StyleBox["r",
+           FontWeight->"Bold"], "^"],
+         FontWeight->"Bold"]}], ")"}], 
+      RowBox[{"\[DifferentialD]", "\[Delta]"}], " ", 
+      SubscriptBox[
+       StyleBox["x",
+        FontWeight->"Bold"], 
+       RowBox[{"n", "+", "1"}]]}]}]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "5247ebaa-c48f-4cfb-b98d-a2b031e00fb1"],
+ "\n",
+ StyleBox["First part",
+  FontWeight->"Bold"],
+ "\n\t",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubscriptBox[
+     StyleBox[
+      OverscriptBox[
+       StyleBox["r",
+        FontWeight->"Bold"], "^"],
+      FontWeight->"Bold"], 
+     RowBox[{"n", "+", "1"}]], "=", 
+    RowBox[{
+     RowBox[{
+      StyleBox["\[CapitalSigma]",
+       FontWeight->"Bold"], 
+      StyleBox["(",
+       FontWeight->"Plain"], 
+      StyleBox[
+       RowBox[{"t", "+", 
+        RowBox[{"\[Delta]", " ", "t"}]}],
+       FontWeight->"Plain"], 
+      StyleBox[")",
+       FontWeight->"Plain"]}], 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{
+        SubsuperscriptBox[
+         StyleBox["\[CapitalSigma]",
+          FontWeight->"Bold"], "z", 
+         RowBox[{"-", "1"}]], 
+        StyleBox[
+         OverscriptBox[
+          StyleBox["z",
+           FontWeight->"Bold"], "_"],
+         FontWeight->"Bold"]}], "+", " ", 
+       RowBox[{
+        SubsuperscriptBox[
+         StyleBox["\[CapitalSigma]",
+          FontWeight->"Bold"], "x", 
+         RowBox[{"-", "1"}]], 
+        RowBox[{
+         StyleBox["x",
+          FontWeight->"Bold"], 
+         StyleBox["(",
+          FontWeight->"Plain"], 
+         StyleBox[
+          RowBox[{"t", "+", 
+           RowBox[{"\[Delta]", " ", "t"}]}],
+          FontWeight->"Plain"], 
+         StyleBox[")",
+          FontWeight->"Plain"]}]}]}], ")"}]}]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "85f9f9c8-691c-403b-af72-2fad42b9260c"],
+ "\n\tBy ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     StyleBox["x",
+      FontWeight->"Bold"], "(", 
+     RowBox[{"t", "+", 
+      RowBox[{"\[Delta]", " ", "t"}]}], ")"}], "=", 
+    RowBox[{
+     RowBox[{
+      StyleBox["x",
+       FontWeight->"Bold"], "(", "t", ")"}], "+", 
+     RowBox[{"\[Delta]", " ", 
+      RowBox[{
+       StyleBox["x",
+        FontWeight->"Bold"], "(", 
+       RowBox[{"t", "+", 
+        RowBox[{"\[Delta]", " ", "t"}]}], ")"}]}]}]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "c2db2268-70bf-4a76-b077-8d74ea8f539f"],
+ " and ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     StyleBox["x",
+      FontWeight->"Bold"], "(", "t", ")"}], "=", 
+    RowBox[{
+     SubscriptBox[
+      StyleBox["\[CapitalSigma]",
+       FontWeight->"Bold"], "x"], 
+     StyleBox["(",
+      FontWeight->"Plain"], 
+     RowBox[{
+      RowBox[{
+       SuperscriptBox[
+        RowBox[{
+         StyleBox["\[CapitalSigma]",
+          FontWeight->"Bold"], 
+         StyleBox["(",
+          FontWeight->"Plain"], 
+         StyleBox["t",
+          FontWeight->"Plain"], 
+         StyleBox[")",
+          FontWeight->"Plain"]}], 
+        RowBox[{"-", "1"}]], 
+       RowBox[{
+        StyleBox[
+         OverscriptBox["r", "^"],
+         FontWeight->"Bold"], "(", "t", ")"}]}], "-", 
+      RowBox[{
+       SubsuperscriptBox[
+        StyleBox["\[CapitalSigma]",
+         FontWeight->"Bold"], "z", 
+        RowBox[{"-", "1"}]], 
+       StyleBox[
+        OverscriptBox[
+         StyleBox["z",
+          FontWeight->"Bold"], "_"],
+        FontWeight->"Bold"]}]}], ")"}]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "d088cace-723e-4dc3-a381-ae2f37bf53c3"],
+ "\n\t\[Implies]",
+ Cell[BoxData[{
+  FormBox[
+   RowBox[{
+    SubscriptBox[
+     StyleBox[
+      OverscriptBox[
+       StyleBox["r",
+        FontWeight->"Bold"], "^"],
+      FontWeight->"Bold"], 
+     RowBox[{"n", "+", "1"}]], "=", 
+    RowBox[{
+     RowBox[{
+      StyleBox["\[CapitalSigma]",
+       FontWeight->"Bold"], 
+      StyleBox["(",
+       FontWeight->"Plain"], 
+      StyleBox[
+       RowBox[{"t", "+", 
+        RowBox[{"\[Delta]", " ", "t"}]}],
+       FontWeight->"Plain"], 
+      StyleBox[")",
+       FontWeight->"Plain"]}], 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{
+        SubsuperscriptBox[
+         StyleBox["\[CapitalSigma]",
+          FontWeight->"Bold"], "z", 
+         RowBox[{"-", "1"}]], 
+        StyleBox[
+         OverscriptBox[
+          StyleBox["z",
+           FontWeight->"Bold"], "_"],
+         FontWeight->"Bold"]}], "+", " ", 
+       RowBox[{
+        SubsuperscriptBox[
+         StyleBox["\[CapitalSigma]",
+          FontWeight->"Bold"], "x", 
+         RowBox[{"-", "1"}]], "(", 
+        RowBox[{
+         RowBox[{
+          StyleBox["x",
+           FontWeight->"Bold"], "(", "t", ")"}], "+", 
+         RowBox[{"\[Delta]", " ", 
+          RowBox[{
+           StyleBox["x",
+            FontWeight->"Bold"], "(", 
+           RowBox[{"t", "+", 
+            RowBox[{"\[Delta]", " ", "t"}]}], ")"}]}]}], ")"}]}], ")"}]}]}], 
+   TraditionalForm], "\[IndentingNewLine]", 
+  FormBox[
+   RowBox[{"=", 
+    RowBox[{
+     RowBox[{
+      StyleBox["\[CapitalSigma]",
+       FontWeight->"Bold"], 
+      StyleBox["(",
+       FontWeight->"Plain"], 
+      StyleBox[
+       RowBox[{"t", "+", 
+        RowBox[{"\[Delta]", " ", "t"}]}],
+       FontWeight->"Plain"], 
+      StyleBox[")",
+       FontWeight->"Plain"]}], 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{
+        SubsuperscriptBox[
+         StyleBox["\[CapitalSigma]",
+          FontWeight->"Bold"], "z", 
+         RowBox[{"-", "1"}]], 
+        StyleBox[
+         OverscriptBox[
+          StyleBox["z",
+           FontWeight->"Bold"], "_"],
+         FontWeight->"Bold"]}], "+", " ", 
+       RowBox[{
+        SubsuperscriptBox[
+         StyleBox["\[CapitalSigma]",
+          FontWeight->"Bold"], "x", 
+         RowBox[{"-", "1"}]], "(", 
+        RowBox[{
+         RowBox[{
+          SubscriptBox[
+           StyleBox["\[CapitalSigma]",
+            FontWeight->"Bold"], "x"], 
+          StyleBox["(",
+           FontWeight->"Plain"], 
+          RowBox[{
+           RowBox[{
+            SuperscriptBox[
+             RowBox[{
+              StyleBox["\[CapitalSigma]",
+               FontWeight->"Bold"], 
+              StyleBox["(",
+               FontWeight->"Plain"], 
+              StyleBox["t",
+               FontWeight->"Plain"], 
+              StyleBox[")",
+               FontWeight->"Plain"]}], 
+             RowBox[{"-", "1"}]], 
+            RowBox[{
+             StyleBox[
+              OverscriptBox["r", "^"],
+              FontWeight->"Bold"], "(", "t", ")"}]}], "-", 
+           RowBox[{
+            SubsuperscriptBox[
+             StyleBox["\[CapitalSigma]",
+              FontWeight->"Bold"], "z", 
+             RowBox[{"-", "1"}]], 
+            StyleBox[
+             OverscriptBox[
+              StyleBox["z",
+               FontWeight->"Bold"], "_"],
+             FontWeight->"Bold"]}]}], ")"}], "+", 
+         RowBox[{"\[Delta]", " ", 
+          RowBox[{
+           StyleBox["x",
+            FontWeight->"Bold"], "(", 
+           RowBox[{"t", "+", 
+            RowBox[{"\[Delta]", " ", "t"}]}], ")"}]}]}], ")"}]}], ")"}]}]}], 
+   TraditionalForm], "\[IndentingNewLine]", 
+  FormBox[
+   RowBox[{"=", 
+    RowBox[{
+     RowBox[{
+      StyleBox["\[CapitalSigma]",
+       FontWeight->"Bold"], 
+      StyleBox["(",
+       FontWeight->"Plain"], 
+      StyleBox[
+       RowBox[{"t", "+", 
+        RowBox[{"\[Delta]", " ", "t"}]}],
+       FontWeight->"Plain"], 
+      StyleBox[")",
+       FontWeight->"Plain"]}], 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{
+        SuperscriptBox[
+         RowBox[{
+          StyleBox["\[CapitalSigma]",
+           FontWeight->"Bold"], 
+          StyleBox["(",
+           FontWeight->"Plain"], 
+          StyleBox["t",
+           FontWeight->"Plain"], 
+          StyleBox[")",
+           FontWeight->"Plain"]}], 
+         RowBox[{"-", "1"}]], 
+        RowBox[{
+         StyleBox[
+          OverscriptBox["r", "^"],
+          FontWeight->"Bold"], "(", "t", ")"}]}], "+", 
+       RowBox[{
+        SubsuperscriptBox[
+         StyleBox["\[CapitalSigma]",
+          FontWeight->"Bold"], "x", 
+         RowBox[{"-", "1"}]], "\[Delta]", " ", 
+        RowBox[{
+         StyleBox["x",
+          FontWeight->"Bold"], "(", 
+         RowBox[{"t", "+", 
+          RowBox[{"\[Delta]", " ", "t"}]}], ")"}]}]}], ")"}]}]}], 
+   TraditionalForm]}],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "a8082752-9e01-4408-8c10-25a21dbf098a"],
+ "\n\t\[Implies]",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     StyleBox[
+      RowBox[{"\[Delta]", 
+       StyleBox["x",
+        FontWeight->"Bold"]}]], "(", 
+     RowBox[{"t", "+", 
+      RowBox[{"\[Delta]", " ", "t"}]}], ")"}], "=", 
+    RowBox[{
+     RowBox[{
+      SubscriptBox[
+       StyleBox["\[CapitalSigma]",
+        FontWeight->"Bold"], "x"], 
+      SuperscriptBox[
+       RowBox[{
+        StyleBox["\[CapitalSigma]",
+         FontWeight->"Bold"], "(", 
+        RowBox[{"t", "+", 
+         RowBox[{"\[Delta]", " ", "t"}]}], ")"}], 
+       RowBox[{"-", "1"}]], 
+      SubscriptBox[
+       StyleBox[
+        OverscriptBox["r", "^"],
+        FontWeight->"Bold"], 
+       RowBox[{"n", "+", "1"}]]}], "-", 
+     RowBox[{
+      SubscriptBox[
+       StyleBox["\[CapitalSigma]",
+        FontWeight->"Bold"], "x"], 
+      SuperscriptBox[
+       RowBox[{
+        StyleBox["\[CapitalSigma]",
+         FontWeight->"Bold"], "(", 
+        RowBox[{"t", "+", 
+         RowBox[{"\[Delta]", " ", "t"}]}], ")"}], 
+       RowBox[{"-", "1"}]], 
+      RowBox[{
+       StyleBox["\[CapitalSigma]",
+        FontWeight->"Bold"], 
+       StyleBox["(",
+        FontWeight->"Plain"], 
+       StyleBox[
+        RowBox[{"t", "+", 
+         RowBox[{"\[Delta]", " ", "t"}]}],
+        FontWeight->"Plain"], 
+       StyleBox[")",
+        FontWeight->"Plain"]}], 
+      SuperscriptBox[
+       RowBox[{
+        StyleBox["\[CapitalSigma]",
+         FontWeight->"Bold"], 
+        StyleBox["(",
+         FontWeight->"Plain"], 
+        StyleBox["t",
+         FontWeight->"Plain"], 
+        StyleBox[")",
+         FontWeight->"Plain"]}], 
+       RowBox[{"-", "1"}]], 
+      RowBox[{
+       StyleBox[
+        OverscriptBox["r", "^"],
+        FontWeight->"Bold"], "(", "t", ")"}]}]}]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "6fca554d-55ab-4478-9013-fef340662ac4"],
+ "\n",
+ StyleBox["Second part",
+  FontWeight->"Bold"],
+ "\n\t",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"\[Delta]", " ", 
+     RowBox[{
+      StyleBox["x",
+       FontWeight->"Bold"], "(", 
+      RowBox[{"t", "+", 
+       RowBox[{"\[Delta]", " ", "t"}]}], ")"}]}], "|", 
+    RowBox[{
+     StyleBox["z",
+      FontWeight->"Bold"], "\[Distributed]", 
+     RowBox[{"\[ScriptCapitalN]", "(", 
+      RowBox[{
+       RowBox[{
+        StyleBox["z",
+         FontWeight->"Bold"], 
+        StyleBox[" ",
+         FontWeight->"Bold"], 
+        StyleBox["\[Delta]",
+         FontWeight->"Plain"], 
+        StyleBox[" ",
+         FontWeight->"Plain"], 
+        StyleBox["t",
+         FontWeight->"Plain"]}], 
+       StyleBox[",",
+        FontWeight->"Plain"], 
+       RowBox[{
+        SubscriptBox[
+         StyleBox["\[CapitalSigma]",
+          FontWeight->"Bold"], "x"], 
+        StyleBox[" ",
+         FontWeight->"Bold"], 
+        StyleBox["\[Delta]",
+         FontWeight->"Plain"], 
+        StyleBox[" ",
+         FontWeight->"Plain"], 
+        StyleBox["t",
+         FontWeight->"Plain"]}]}], ")"}]}]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "b0a21f90-99a2-498c-8798-76402f2a8a73"],
+ "\n\t",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    StyleBox["z",
+     FontWeight->"Bold"], "|", 
+    RowBox[{
+     RowBox[{
+      StyleBox[
+       OverscriptBox["r", "^"],
+       FontWeight->"Bold"], "(", "t", ")"}], "\[Distributed]", 
+     RowBox[{"\[ScriptCapitalN]", "(", 
+      RowBox[{
+       RowBox[{
+        StyleBox[
+         OverscriptBox["r", "^"],
+         FontWeight->"Bold"], "(", "t", ")"}], ",", 
+       RowBox[{
+        StyleBox["\[CapitalSigma]",
+         FontWeight->"Bold"], 
+        StyleBox["(",
+         FontWeight->"Plain"], 
+        StyleBox["t",
+         FontWeight->"Plain"], 
+        StyleBox[")",
+         FontWeight->"Plain"]}]}], ")"}]}]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "f867407f-be65-46dd-96da-aba8405e4c19"],
+ " \[Implies] ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     StyleBox["z",
+      FontWeight->"Bold"], 
+     StyleBox[" ",
+      FontWeight->"Bold"], 
+     StyleBox["\[Delta]",
+      FontWeight->"Plain"], 
+     StyleBox[" ",
+      FontWeight->"Plain"], 
+     StyleBox["t",
+      FontWeight->"Plain"]}], "|", 
+    RowBox[{
+     RowBox[{
+      StyleBox[
+       OverscriptBox["r", "^"],
+       FontWeight->"Bold"], "(", "t", ")"}], "\[Distributed]", 
+     RowBox[{"\[ScriptCapitalN]", "(", 
+      RowBox[{
+       RowBox[{
+        RowBox[{
+         StyleBox[
+          OverscriptBox["r", "^"],
+          FontWeight->"Bold"], "(", "t", ")"}], " ", "\[Delta]", " ", "t"}], 
+       ",", 
+       RowBox[{
+        RowBox[{
+         StyleBox["\[CapitalSigma]",
+          FontWeight->"Bold"], "(", "t", ")"}], " ", 
+        SuperscriptBox[
+         RowBox[{"(", 
+          RowBox[{"\[Delta]", " ", "t"}], ")"}], "2"]}]}], ")"}]}]}], 
+   TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "639418ad-3305-4175-a3ce-468163eedc0d"],
+ "\n\tBy the Note below \n\t",
+ Cell[BoxData[{
+  FormBox[
+   RowBox[{
+    RowBox[{"\[ScriptCapitalP]", "(", 
+     RowBox[{
+      RowBox[{"\[Delta]", " ", 
+       RowBox[{
+        StyleBox["x",
+         FontWeight->"Bold"], "(", 
+        RowBox[{"t", "+", 
+         RowBox[{"\[Delta]", " ", "t"}]}], ")"}]}], "|", 
+      RowBox[{
+       StyleBox[
+        OverscriptBox["r", "^"],
+        FontWeight->"Bold"], "(", "t", ")"}]}], ")"}], "\[Proportional]", 
+    RowBox[{
+     SubscriptBox["\[Integral]", "\[CapitalOmega]"], 
+     RowBox[{
+      SuperscriptBox["\[ExponentialE]", 
+       RowBox[{
+        RowBox[{"-", 
+         FractionBox["1", "2"]}], 
+        SuperscriptBox[
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{"\[Delta]", " ", 
+            RowBox[{
+             StyleBox["x",
+              FontWeight->"Bold"], "(", 
+             RowBox[{"t", "+", "\[Delta]t"}], ")"}]}], "-", 
+           RowBox[{
+            StyleBox["z",
+             FontWeight->"Bold"], " ", "\[Delta]", " ", "t"}]}], ")"}], "T"], 
+        
+        SuperscriptBox[
+         RowBox[{"(", 
+          RowBox[{
+           SubscriptBox[
+            StyleBox["\[CapitalSigma]",
+             FontWeight->"Bold"], "x"], "\[Delta]", " ", "t"}], ")"}], 
+         RowBox[{"-", "1"}]], 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"\[Delta]", " ", 
+           RowBox[{
+            StyleBox["x",
+             FontWeight->"Bold"], "(", 
+            RowBox[{"t", "+", "\[Delta]t"}], ")"}]}], "-", 
+          RowBox[{
+           StyleBox["z",
+            FontWeight->"Bold"], " ", "\[Delta]", " ", "t"}]}], ")"}]}]], 
+      SuperscriptBox["\[ExponentialE]", 
+       RowBox[{
+        SuperscriptBox[
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{
+            StyleBox["z",
+             FontWeight->"Bold"], " ", "\[Delta]", " ", "t"}], "-", 
+           RowBox[{
+            RowBox[{
+             StyleBox[
+              OverscriptBox["r", "^"],
+              FontWeight->"Bold"], "(", "t", ")"}], " ", "\[Delta]", " ", 
+            "t"}]}], ")"}], "T"], 
+        SuperscriptBox[
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{
+            StyleBox["\[CapitalSigma]",
+             FontWeight->"Bold"], "(", "t", ")"}], " ", 
+           SuperscriptBox[
+            RowBox[{"(", 
+             RowBox[{"\[Delta]", " ", "t"}], ")"}], "2"]}], ")"}], 
+         RowBox[{"-", "1"}]], 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{
+           StyleBox["z",
+            FontWeight->"Bold"], " ", "\[Delta]", " ", "t"}], "-", 
+          RowBox[{
+           RowBox[{
+            StyleBox[
+             OverscriptBox["r", "^"],
+             FontWeight->"Bold"], "(", "t", ")"}], " ", "\[Delta]", " ", 
+           "t"}]}], ")"}]}]], 
+      RowBox[{"\[DifferentialD]", "z"}]}]}]}], 
+   TraditionalForm], "\[IndentingNewLine]", 
+  FormBox[
+   RowBox[{"\[Distributed]", 
+    RowBox[{"\[ScriptCapitalN]", "(", 
+     RowBox[{
+      RowBox[{
+       RowBox[{
+        StyleBox[
+         OverscriptBox["r", "^"],
+         FontWeight->"Bold"], "(", "t", ")"}], " ", "\[Delta]", " ", "t"}], 
+      ",", 
+      RowBox[{
+       SubscriptBox[
+        StyleBox["\[CapitalSigma]",
+         FontWeight->"Bold"], "x"], 
+       StyleBox[" ",
+        FontWeight->"Bold"], 
+       StyleBox["\[Delta]",
+        FontWeight->"Plain"], 
+       StyleBox[" ",
+        FontWeight->"Plain"], 
+       RowBox[{
+        StyleBox["t",
+         FontWeight->"Plain"], 
+        StyleBox["(",
+         FontWeight->"Plain"], 
+        RowBox[{
+         SuperscriptBox[
+          RowBox[{"(", 
+           RowBox[{
+            StyleBox[
+             SubscriptBox[
+              StyleBox["\[CapitalSigma]",
+               FontWeight->"Bold"], "x"],
+             FontWeight->"Plain"], 
+            StyleBox[" ",
+             FontWeight->"Bold"], 
+            StyleBox["\[Delta]",
+             FontWeight->"Plain"], 
+            StyleBox[" ",
+             FontWeight->"Plain"], 
+            StyleBox["t",
+             FontWeight->"Plain"]}], ")"}], 
+          RowBox[{"-", "1"}]], 
+         StyleBox["+",
+          FontWeight->"Plain"], 
+         SuperscriptBox[
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{
+             StyleBox["\[CapitalSigma]",
+              FontWeight->"Bold"], "(", "t", ")"}], " ", 
+            SuperscriptBox[
+             RowBox[{"(", 
+              RowBox[{"\[Delta]", " ", "t"}], ")"}], "2"]}], ")"}], 
+          RowBox[{"-", "1"}]]}], 
+        StyleBox[")",
+         FontWeight->"Plain"]}], 
+       RowBox[{
+        StyleBox["\[CapitalSigma]",
+         FontWeight->"Bold"], "(", "t", ")"}], " ", 
+       SuperscriptBox[
+        RowBox[{"(", 
+         RowBox[{"\[Delta]", " ", "t"}], ")"}], "2"]}]}], ")"}]}], 
+   TraditionalForm], "\[IndentingNewLine]", 
+  FormBox[
+   RowBox[{"\[Distributed]", 
+    RowBox[{"\[ScriptCapitalN]", "(", 
+     RowBox[{
+      RowBox[{
+       RowBox[{
+        StyleBox[
+         OverscriptBox["r", "^"],
+         FontWeight->"Bold"], "(", "t", ")"}], " ", "\[Delta]", " ", "t"}], 
+      ",", 
+      RowBox[{
+       RowBox[{
+        SubscriptBox[
+         StyleBox["\[CapitalSigma]",
+          FontWeight->"Bold"], "x"], 
+        StyleBox[" ",
+         FontWeight->"Bold"], 
+        StyleBox["\[Delta]",
+         FontWeight->"Plain"], 
+        StyleBox[" ",
+         FontWeight->"Plain"], 
+        StyleBox["t",
+         FontWeight->"Plain"]}], 
+       StyleBox["+",
+        FontWeight->"Plain"], 
+       RowBox[{
+        RowBox[{
+         StyleBox["\[CapitalSigma]",
+          FontWeight->"Bold"], "(", "t", ")"}], " ", 
+        SuperscriptBox[
+         RowBox[{"(", 
+          RowBox[{"\[Delta]", " ", "t"}], ")"}], "2"]}]}]}], ")"}]}], 
+   TraditionalForm]}],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "2518329a-41c8-4290-bacc-75ff88deb086"],
+ "\n\t",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"\[Delta]", " ", 
+     RowBox[{
+      StyleBox["x",
+       FontWeight->"Bold"], "(", 
+      RowBox[{"t", "+", 
+       RowBox[{"\[Delta]", " ", "t"}]}], ")"}]}], "|", 
+    RowBox[{
+     RowBox[{
+      StyleBox[
+       OverscriptBox["r", "^"],
+       FontWeight->"Bold"], "(", "t", ")"}], "\[Distributed]", 
+     RowBox[{"\[ScriptCapitalN]", "(", 
+      RowBox[{
+       RowBox[{
+        RowBox[{
+         StyleBox[
+          OverscriptBox["r", "^"],
+          FontWeight->"Bold"], "(", "t", ")"}], " ", "\[Delta]", " ", "t"}], 
+       ",", 
+       RowBox[{
+        RowBox[{
+         SubscriptBox[
+          StyleBox["\[CapitalSigma]",
+           FontWeight->"Bold"], "x"], 
+         StyleBox[" ",
+          FontWeight->"Bold"], 
+         StyleBox["\[Delta]",
+          FontWeight->"Plain"], 
+         StyleBox[" ",
+          FontWeight->"Plain"], 
+         StyleBox["t",
+          FontWeight->"Plain"]}], 
+        StyleBox["+",
+         FontWeight->"Plain"], 
+        RowBox[{
+         RowBox[{
+          StyleBox["\[CapitalSigma]",
+           FontWeight->"Bold"], "(", "t", ")"}], " ", 
+         SuperscriptBox[
+          RowBox[{"(", 
+           RowBox[{"\[Delta]", " ", "t"}], ")"}], "2"]}]}]}], ")"}]}]}], 
+   TraditionalForm]],ExpressionUUID->"a54aebe0-7587-4adc-9e22-ebc4e5210e93"],
+ "\n\t[Note: Expanded by \[OpenCurlyDoubleQuote]Gaussian AutoEncoder (2019)\
+\[CloseCurlyDoubleQuote]\n\t\t",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     SubscriptBox["\[Rho]", "1"], "(", "x", ")"}], ":=", 
+    RowBox[{
+     FractionBox["1", 
+      SqrtBox[
+       RowBox[{"2", "\[Pi]", " ", 
+        RowBox[{"det", "(", 
+         SubscriptBox["\[CapitalSigma]", "1"], ")"}]}]]], 
+     SuperscriptBox["\[ExponentialE]", 
+      RowBox[{
+       RowBox[{"-", 
+        FractionBox["1", "2"]}], 
+       SuperscriptBox[
+        RowBox[{"(", 
+         RowBox[{"x", "-", 
+          SubscriptBox["m", "1"]}], ")"}], "T"], 
+       RowBox[{
+        SubsuperscriptBox["\[CapitalSigma]", "1", 
+         RowBox[{"-", "1"}]], "(", 
+        RowBox[{"x", "-", 
+         SubscriptBox["m", "1"]}], ")"}]}]]}]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "07bfe44e-d7b0-4bba-90d1-9582be44de78"],
+ "\n\t\t",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     SubscriptBox["\[Rho]", "2"], "(", "x", ")"}], ":=", 
+    RowBox[{
+     FractionBox["1", 
+      SqrtBox[
+       RowBox[{"2", "\[Pi]", " ", 
+        RowBox[{"det", "(", 
+         SubscriptBox["\[CapitalSigma]", "2"], ")"}]}]]], 
+     SuperscriptBox["\[ExponentialE]", 
+      RowBox[{
+       RowBox[{"-", 
+        FractionBox["1", "2"]}], 
+       SuperscriptBox[
+        RowBox[{"(", 
+         RowBox[{"x", "-", 
+          SubscriptBox["m", "2"]}], ")"}], "T"], 
+       RowBox[{
+        SubsuperscriptBox["\[CapitalSigma]", "2", 
+         RowBox[{"-", "1"}]], "(", 
+        RowBox[{"x", "-", 
+         SubscriptBox["m", "2"]}], ")"}]}]]}]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "ac147bb7-c88e-4774-8e55-57d671326ef4"],
+ "\n\t\t",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"d", "=", 
+    RowBox[{
+     RowBox[{
+      SubscriptBox["\[Integral]", 
+       SuperscriptBox["\[DoubleStruckCapitalR]", "D"]], 
+      RowBox[{
+       RowBox[{
+        RowBox[{
+         SubscriptBox["\[Rho]", "1"], "(", "x", ")"}], "\[CenterDot]", 
+        RowBox[{
+         SubscriptBox["\[Rho]", "2"], "(", "x", ")"}]}], 
+       RowBox[{"\[DifferentialD]", "x"}]}]}], "=", "\[IndentingNewLine]", 
+     RowBox[{
+      FractionBox["1", 
+       RowBox[{
+        SuperscriptBox[
+         RowBox[{"(", 
+          RowBox[{"2", "\[Pi]"}], ")"}], "D"], 
+        SqrtBox[
+         RowBox[{"|", 
+          RowBox[{
+           SubscriptBox["\[CapitalSigma]", "1"], "||", 
+           SubscriptBox["\[CapitalSigma]", "2"]}], "|"}]]}]], 
+      RowBox[{
+       SubscriptBox["\[Integral]", 
+        SuperscriptBox["\[DoubleStruckCapitalR]", "D"]], 
+       RowBox[{
+        SuperscriptBox["\[ExponentialE]", 
+         RowBox[{"-", 
+          FractionBox[
+           RowBox[{
+            RowBox[{
+             SuperscriptBox[
+              RowBox[{"(", 
+               RowBox[{"x", "-", 
+                SubscriptBox["m", "1"]}], ")"}], "T"], 
+             RowBox[{
+              SubsuperscriptBox["\[CapitalSigma]", "1", 
+               RowBox[{"-", "1"}]], "(", 
+              RowBox[{"x", "-", 
+               SubscriptBox["m", "1"]}], ")"}]}], "+", 
+            RowBox[{
+             SuperscriptBox[
+              RowBox[{"(", 
+               RowBox[{"x", "-", 
+                SubscriptBox["m", "2"]}], ")"}], "T"], 
+             RowBox[{
+              SubsuperscriptBox["\[CapitalSigma]", "2", 
+               RowBox[{"-", "1"}]], "(", 
+              RowBox[{"x", "-", 
+               SubscriptBox["m", "2"]}], ")"}]}]}], "2"]}]], 
+        RowBox[{"\[DifferentialD]", "x"}]}]}]}]}]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "340422f6-6fe1-4961-a55c-1c0852ab18b6"],
+ "\n\t\t",
+ Cell[BoxData[{
+  FormBox[
+   RowBox[{
+    RowBox[{
+     SuperscriptBox[
+      RowBox[{"(", 
+       RowBox[{"x", "-", 
+        SubscriptBox["m", "1"]}], ")"}], "T"], 
+     RowBox[{
+      SubsuperscriptBox["\[CapitalSigma]", "1", 
+       RowBox[{"-", "1"}]], "(", 
+      RowBox[{"x", "-", 
+       SubscriptBox["m", "1"]}], ")"}]}], "+", 
+    RowBox[{
+     SuperscriptBox[
+      RowBox[{"(", 
+       RowBox[{"x", "-", 
+        SubscriptBox["m", "2"]}], ")"}], "T"], 
+     RowBox[{
+      SubsuperscriptBox["\[CapitalSigma]", "2", 
+       RowBox[{"-", "1"}]], "(", 
+      RowBox[{"x", "-", 
+       SubscriptBox["m", "2"]}], ")"}]}]}], 
+   TraditionalForm], "\[IndentingNewLine]", 
+  FormBox[
+   RowBox[{"=", 
+    RowBox[{
+     RowBox[{
+      RowBox[{
+       SuperscriptBox["x", "T"], "(", 
+       RowBox[{
+        SubsuperscriptBox["\[CapitalSigma]", "1", 
+         RowBox[{"-", "1"}]], "+", 
+        SubsuperscriptBox["\[CapitalSigma]", "2", 
+         RowBox[{"-", "1"}]]}], ")"}], "x"}], "-", 
+     RowBox[{"2", 
+      RowBox[{
+       SuperscriptBox["x", "T"], "(", 
+       RowBox[{
+        RowBox[{
+         SubsuperscriptBox["\[CapitalSigma]", "1", 
+          RowBox[{"-", "1"}]], 
+         SubscriptBox["m", "1"]}], "+", 
+        RowBox[{
+         SubsuperscriptBox["\[CapitalSigma]", "2", 
+          RowBox[{"-", "1"}]], 
+         SubscriptBox["m", "2"]}]}], ")"}]}], "+", 
+     RowBox[{
+      SubsuperscriptBox["m", "1", "T"], 
+      SubsuperscriptBox["\[CapitalSigma]", "1", 
+       RowBox[{"-", "1"}]], 
+      SubscriptBox["m", "1"]}], "+", 
+     RowBox[{
+      SubsuperscriptBox["m", "2", "T"], 
+      SubsuperscriptBox["\[CapitalSigma]", "2", 
+       RowBox[{"-", "1"}]], 
+      SubscriptBox["m", "2"]}]}]}], TraditionalForm]}],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "b3ff5918-e7f0-47eb-8d1c-ae9683dccb24"],
+ "\n\t\tLet ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"\[CapitalPi]", "=", 
+    SuperscriptBox[
+     RowBox[{"(", 
+      RowBox[{
+       SubsuperscriptBox["\[CapitalSigma]", "1", 
+        RowBox[{"-", "1"}]], "+", 
+       SubsuperscriptBox["\[CapitalSigma]", "2", 
+        RowBox[{"-", "1"}]]}], ")"}], 
+     RowBox[{"-", "1"}]]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "b146dae4-a521-4466-a0eb-2079e8eabba6"],
+ ",",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"v", "=", 
+    RowBox[{"\[CapitalPi]", "(", 
+     RowBox[{
+      RowBox[{
+       SubsuperscriptBox["\[CapitalSigma]", "1", 
+        RowBox[{"-", "1"}]], 
+       SubscriptBox["m", "1"]}], "+", 
+      RowBox[{
+       SubsuperscriptBox["\[CapitalSigma]", "2", 
+        RowBox[{"-", "1"}]], 
+       SubscriptBox["m", "2"]}]}], ")"}]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "a6e48b14-4426-4cb0-86dc-8c4766753ac2"],
+ "\n\t\t\t",
+ Cell[BoxData[{
+  FormBox[
+   RowBox[{
+    RowBox[{
+     SuperscriptBox["x", "T"], 
+     SuperscriptBox["\[CapitalPi]", 
+      RowBox[{"-", "1"}]], "x"}], "-", 
+    RowBox[{"2", 
+     SuperscriptBox["x", "T"], 
+     SuperscriptBox["\[CapitalPi]", 
+      RowBox[{"-", "1"}]], "v"}], "+", 
+    RowBox[{
+     SuperscriptBox["v", "T"], " ", 
+     SuperscriptBox["\[CapitalPi]", 
+      RowBox[{"-", "1"}]], "v"}], "-", 
+    RowBox[{
+     SuperscriptBox["v", "T"], " ", 
+     SuperscriptBox["\[CapitalPi]", 
+      RowBox[{"-", "1"}]], "v"}], "+", 
+    RowBox[{
+     SubsuperscriptBox["m", "1", "T"], 
+     SubsuperscriptBox["\[CapitalSigma]", "1", 
+      RowBox[{"-", "1"}]], 
+     SubscriptBox["m", "1"]}], "+", 
+    RowBox[{
+     SubsuperscriptBox["m", "2", "T"], 
+     SubsuperscriptBox["\[CapitalSigma]", "2", 
+      RowBox[{"-", "1"}]], 
+     SubscriptBox["m", "2"]}]}], TraditionalForm], "\[IndentingNewLine]", 
+  FormBox[
+   RowBox[{"=", 
+    RowBox[{
+     RowBox[{
+      SuperscriptBox[
+       RowBox[{"(", 
+        RowBox[{"x", "-", "v"}], ")"}], "T"], 
+      RowBox[{
+       SuperscriptBox["\[CapitalPi]", 
+        RowBox[{"-", "1"}]], "(", 
+       RowBox[{"x", "-", "v"}], ")"}]}], "-", 
+     RowBox[{
+      SuperscriptBox["v", "T"], " ", 
+      SuperscriptBox["\[CapitalPi]", 
+       RowBox[{"-", "1"}]], "v"}], "+", 
+     RowBox[{
+      SubsuperscriptBox["m", "1", "T"], 
+      SubsuperscriptBox["\[CapitalSigma]", "1", 
+       RowBox[{"-", "1"}]], 
+      SubscriptBox["m", "1"]}], "+", 
+     RowBox[{
+      SubsuperscriptBox["m", "2", "T"], 
+      SubsuperscriptBox["\[CapitalSigma]", "2", 
+       RowBox[{"-", "1"}]], 
+      SubscriptBox["m", "2"]}]}]}], TraditionalForm]}],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "aa16ecfe-e981-43d8-904c-14c3ff75f7bf"],
+ "\n\t\t",
+ Cell[BoxData[{
+  FormBox[
+   RowBox[{"d", "=", 
+    RowBox[{
+     FractionBox[
+      SqrtBox[
+       RowBox[{
+        SuperscriptBox[
+         RowBox[{"(", 
+          RowBox[{"2", "\[Pi]"}], ")"}], "D"], "|", "\[CapitalPi]", "|"}]], 
+      RowBox[{
+       SuperscriptBox[
+        RowBox[{"(", 
+         RowBox[{"2", "\[Pi]"}], ")"}], "D"], 
+       SqrtBox[
+        RowBox[{"|", 
+         RowBox[{
+          SubscriptBox["\[CapitalSigma]", "1"], "||", 
+          SubscriptBox["\[CapitalSigma]", "2"]}], "|"}]]}]], 
+     FractionBox["1", 
+      SqrtBox[
+       RowBox[{
+        SuperscriptBox[
+         RowBox[{"(", 
+          RowBox[{"2", "\[Pi]"}], ")"}], "D"], "|", "\[CapitalPi]", "|"}]]], 
+     RowBox[{
+      SubscriptBox["\[Integral]", 
+       SuperscriptBox["\[DoubleStruckCapitalR]", "D"]], 
+      RowBox[{
+       SuperscriptBox["\[ExponentialE]", 
+        RowBox[{"-", 
+         FractionBox[
+          RowBox[{
+           RowBox[{
+            SuperscriptBox[
+             RowBox[{"(", 
+              RowBox[{"x", "-", "v"}], ")"}], "T"], 
+            RowBox[{
+             SuperscriptBox["\[CapitalPi]", 
+              RowBox[{"-", "1"}]], "(", 
+             RowBox[{"x", "-", "v"}], ")"}]}], "-", 
+           RowBox[{
+            SuperscriptBox["v", "T"], " ", 
+            SuperscriptBox["\[CapitalPi]", 
+             RowBox[{"-", "1"}]], "v"}], "+", 
+           RowBox[{
+            SubsuperscriptBox["m", "1", "T"], 
+            SubsuperscriptBox["\[CapitalSigma]", "1", 
+             RowBox[{"-", "1"}]], 
+            SubscriptBox["m", "1"]}], "+", 
+           RowBox[{
+            SubsuperscriptBox["m", "2", "T"], 
+            SubsuperscriptBox["\[CapitalSigma]", "2", 
+             RowBox[{"-", "1"}]], 
+            SubscriptBox["m", "2"]}]}], "2"]}]], 
+       RowBox[{"\[DifferentialD]", "x"}]}]}]}]}], 
+   TraditionalForm], "\[IndentingNewLine]", 
+  FormBox[
+   RowBox[{"=", 
+    RowBox[{
+     FractionBox[
+      SqrtBox[
+       RowBox[{
+        SuperscriptBox[
+         RowBox[{"(", 
+          RowBox[{"2", "\[Pi]"}], ")"}], "D"], "|", "\[CapitalPi]", "|"}]], 
+      RowBox[{
+       SuperscriptBox[
+        RowBox[{"(", 
+         RowBox[{"2", "\[Pi]"}], ")"}], "D"], 
+       SqrtBox[
+        RowBox[{"|", 
+         RowBox[{
+          SubscriptBox["\[CapitalSigma]", "1"], "||", 
+          SubscriptBox["\[CapitalSigma]", "2"]}], "|"}]]}]], 
+     SuperscriptBox["\[ExponentialE]", 
+      RowBox[{
+       RowBox[{"-", 
+        FractionBox["1", "2"]}], 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{
+          SubsuperscriptBox["m", "1", "T"], 
+          SubsuperscriptBox["\[CapitalSigma]", "1", 
+           RowBox[{"-", "1"}]], 
+          SubscriptBox["m", "1"]}], "+", 
+         RowBox[{
+          SubsuperscriptBox["m", "2", "T"], 
+          SubsuperscriptBox["\[CapitalSigma]", "2", 
+           RowBox[{"-", "1"}]], 
+          SubscriptBox["m", "2"]}], "-", 
+         RowBox[{
+          SuperscriptBox["v", "T"], " ", 
+          SuperscriptBox["\[CapitalPi]", 
+           RowBox[{"-", "1"}]], "v"}]}], ")"}]}]]}]}], 
+   TraditionalForm], "\[IndentingNewLine]", 
+  FormBox[
+   RowBox[{"=", 
+    RowBox[{
+     FractionBox[
+      SqrtBox[
+       RowBox[{
+        SuperscriptBox[
+         RowBox[{"(", 
+          RowBox[{"2", "\[Pi]"}], ")"}], "D"], "|", "\[CapitalPi]", "|"}]], 
+      RowBox[{
+       SuperscriptBox[
+        RowBox[{"(", 
+         RowBox[{"2", "\[Pi]"}], ")"}], "D"], 
+       SqrtBox[
+        RowBox[{"|", 
+         RowBox[{
+          SubscriptBox["\[CapitalSigma]", "1"], "||", 
+          SubscriptBox["\[CapitalSigma]", "2"]}], "|"}]]}]], 
+     SuperscriptBox["\[ExponentialE]", 
+      RowBox[{
+       RowBox[{"-", 
+        FractionBox["1", "2"]}], 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{
+          SubsuperscriptBox["m", "1", "T"], 
+          SubsuperscriptBox["\[CapitalSigma]", "1", 
+           RowBox[{"-", "1"}]], 
+          SubscriptBox["m", "1"]}], "+", 
+         RowBox[{
+          SubsuperscriptBox["m", "2", "T"], 
+          SubsuperscriptBox["\[CapitalSigma]", "2", 
+           RowBox[{"-", "1"}]], 
+          SubscriptBox["m", "2"]}], "-", 
+         RowBox[{
+          SuperscriptBox[
+           RowBox[{"(", 
+            RowBox[{
+             RowBox[{
+              SubsuperscriptBox["\[CapitalSigma]", "1", 
+               RowBox[{"-", "1"}]], 
+              SubscriptBox["m", "1"]}], "+", 
+             RowBox[{
+              SubsuperscriptBox["\[CapitalSigma]", "2", 
+               RowBox[{"-", "1"}]], 
+              SubscriptBox["m", "2"]}]}], ")"}], "T"], "\[CapitalPi]", " ", 
+          SuperscriptBox["\[CapitalPi]", 
+           RowBox[{"-", "1"}]], 
+          RowBox[{"\[CapitalPi]", "(", 
+           RowBox[{
+            RowBox[{
+             SubsuperscriptBox["\[CapitalSigma]", "1", 
+              RowBox[{"-", "1"}]], 
+             SubscriptBox["m", "1"]}], "+", 
+            RowBox[{
+             SubsuperscriptBox["\[CapitalSigma]", "2", 
+              RowBox[{"-", "1"}]], 
+             SubscriptBox["m", "2"]}]}], ")"}]}]}], ")"}]}]]}]}], 
+   TraditionalForm], "\[IndentingNewLine]", 
+  FormBox[
+   RowBox[{"=", 
+    RowBox[{
+     FractionBox[
+      SqrtBox[
+       RowBox[{
+        SuperscriptBox[
+         RowBox[{"(", 
+          RowBox[{"2", "\[Pi]"}], ")"}], "D"], "|", "\[CapitalPi]", "|"}]], 
+      RowBox[{
+       SuperscriptBox[
+        RowBox[{"(", 
+         RowBox[{"2", "\[Pi]"}], ")"}], "D"], 
+       SqrtBox[
+        RowBox[{"|", 
+         RowBox[{
+          SubscriptBox["\[CapitalSigma]", "1"], "||", 
+          SubscriptBox["\[CapitalSigma]", "2"]}], "|"}]]}]], 
+     SuperscriptBox["\[ExponentialE]", 
+      RowBox[{
+       RowBox[{"-", 
+        FractionBox["1", "2"]}], 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{
+          SubsuperscriptBox["m", "1", "T"], 
+          SubsuperscriptBox["\[CapitalSigma]", "1", 
+           RowBox[{"-", "1"}]], 
+          SubscriptBox["m", "1"]}], "+", 
+         RowBox[{
+          SubsuperscriptBox["m", "2", "T"], 
+          SubsuperscriptBox["\[CapitalSigma]", "2", 
+           RowBox[{"-", "1"}]], 
+          SubscriptBox["m", "2"]}], "-", 
+         RowBox[{
+          SuperscriptBox[
+           RowBox[{"(", 
+            RowBox[{
+             RowBox[{
+              SubsuperscriptBox["\[CapitalSigma]", "1", 
+               RowBox[{"-", "1"}]], 
+              SubscriptBox["m", "1"]}], "+", 
+             RowBox[{
+              SubsuperscriptBox["\[CapitalSigma]", "2", 
+               RowBox[{"-", "1"}]], 
+              SubscriptBox["m", "2"]}]}], ")"}], "T"], "\[CapitalPi]", " ", 
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{
+             SubsuperscriptBox["\[CapitalSigma]", "1", 
+              RowBox[{"-", "1"}]], 
+             SubscriptBox["m", "1"]}], "+", 
+            RowBox[{
+             SubsuperscriptBox["\[CapitalSigma]", "2", 
+              RowBox[{"-", "1"}]], 
+             SubscriptBox["m", "2"]}]}], ")"}]}]}], ")"}]}]]}]}], 
+   TraditionalForm], "\[IndentingNewLine]", 
+  FormBox[
+   RowBox[{"=", 
+    RowBox[{
+     FractionBox[
+      SqrtBox[
+       RowBox[{
+        SuperscriptBox[
+         RowBox[{"(", 
+          RowBox[{"2", "\[Pi]"}], ")"}], "D"], "|", "\[CapitalPi]", "|"}]], 
+      RowBox[{
+       SuperscriptBox[
+        RowBox[{"(", 
+         RowBox[{"2", "\[Pi]"}], ")"}], "D"], 
+       SqrtBox[
+        RowBox[{"|", 
+         RowBox[{
+          SubscriptBox["\[CapitalSigma]", "1"], "||", 
+          SubscriptBox["\[CapitalSigma]", "2"]}], "|"}]]}]], 
+     SuperscriptBox["\[ExponentialE]", 
+      RowBox[{
+       RowBox[{"-", 
+        FractionBox["1", "2"]}], 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{
+          SubsuperscriptBox["m", "1", "T"], 
+          RowBox[{
+           SubsuperscriptBox["\[CapitalSigma]", "1", 
+            RowBox[{"-", "1"}]], "(", 
+           RowBox[{
+            SuperscriptBox["\[CapitalPi]\[CapitalPi]", 
+             RowBox[{"-", "1"}]], "-", 
+            SubsuperscriptBox["\[CapitalPi]\[CapitalSigma]", "1", 
+             RowBox[{"-", "1"}]]}], ")"}], 
+          SubscriptBox["m", "1"]}], "+", 
+         RowBox[{
+          SubsuperscriptBox["m", "2", "T"], 
+          RowBox[{
+           SubsuperscriptBox["\[CapitalSigma]", "2", 
+            RowBox[{"-", "1"}]], "(", 
+           RowBox[{
+            RowBox[{"\[CapitalPi]", " ", 
+             SuperscriptBox["\[CapitalPi]", 
+              RowBox[{"-", "1"}]]}], "-", 
+            SubsuperscriptBox["\[CapitalPi]\[CapitalSigma]", "2", 
+             RowBox[{"-", "1"}]]}], ")"}], 
+          SubscriptBox["m", "2"]}], "-", 
+         RowBox[{
+          SubsuperscriptBox["m", "1", "T"], 
+          SubsuperscriptBox["\[CapitalSigma]", "1", 
+           RowBox[{"-", "1"}]], 
+          SubsuperscriptBox["\[CapitalPi]\[CapitalSigma]", "2", 
+           RowBox[{"-", "1"}]], 
+          SubscriptBox["m", "2"]}], "-", 
+         RowBox[{
+          SubsuperscriptBox["m", "2", "T"], 
+          SubsuperscriptBox["\[CapitalSigma]", "2", 
+           RowBox[{"-", "1"}]], 
+          SubsuperscriptBox["\[CapitalPi]\[CapitalSigma]", "1", 
+           RowBox[{"-", "1"}]], 
+          SubscriptBox["m", "1"]}]}], ")"}]}]]}]}], 
+   TraditionalForm], "\[IndentingNewLine]", 
+  FormBox[
+   RowBox[{"=", 
+    RowBox[{
+     FractionBox[
+      SqrtBox[
+       RowBox[{
+        SuperscriptBox[
+         RowBox[{"(", 
+          RowBox[{"2", "\[Pi]"}], ")"}], "D"], "|", "\[CapitalPi]", "|"}]], 
+      RowBox[{
+       SuperscriptBox[
+        RowBox[{"(", 
+         RowBox[{"2", "\[Pi]"}], ")"}], "D"], 
+       SqrtBox[
+        RowBox[{"|", 
+         RowBox[{
+          SubscriptBox["\[CapitalSigma]", "1"], "||", 
+          SubscriptBox["\[CapitalSigma]", "2"]}], "|"}]]}]], 
+     SuperscriptBox["\[ExponentialE]", 
+      RowBox[{
+       RowBox[{"-", 
+        FractionBox["1", "2"]}], 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{
+          SubsuperscriptBox["m", "1", "T"], 
+          SuperscriptBox[
+           RowBox[{
+            SubsuperscriptBox["\[CapitalSigma]", "1", 
+             RowBox[{"-", "1"}]], "(", 
+            RowBox[{
+             SubsuperscriptBox["\[CapitalSigma]", "1", 
+              RowBox[{"-", "1"}]], "+", 
+             SubsuperscriptBox["\[CapitalSigma]", "2", 
+              RowBox[{"-", "1"}]]}], ")"}], 
+           RowBox[{"-", "1"}]], 
+          SubsuperscriptBox["\[CapitalSigma]", "2", 
+           RowBox[{"-", "1"}]], 
+          SubscriptBox["m", "1"]}], "+", 
+         RowBox[{
+          SubsuperscriptBox["m", "2", "T"], 
+          SuperscriptBox[
+           RowBox[{
+            SubsuperscriptBox["\[CapitalSigma]", "2", 
+             RowBox[{"-", "1"}]], "(", 
+            RowBox[{
+             SubsuperscriptBox["\[CapitalSigma]", "1", 
+              RowBox[{"-", "1"}]], "+", 
+             SubsuperscriptBox["\[CapitalSigma]", "2", 
+              RowBox[{"-", "1"}]]}], ")"}], 
+           RowBox[{"-", "1"}]], 
+          SubsuperscriptBox["\[CapitalSigma]", "1", 
+           RowBox[{"-", "1"}]], 
+          SubscriptBox["m", "2"]}], "-", 
+         RowBox[{
+          SubsuperscriptBox["m", "1", "T"], 
+          SubsuperscriptBox["\[CapitalSigma]", "1", 
+           RowBox[{"-", "1"}]], 
+          SubsuperscriptBox["\[CapitalPi]\[CapitalSigma]", "2", 
+           RowBox[{"-", "1"}]], 
+          SubscriptBox["m", "2"]}], "-", 
+         RowBox[{
+          SubsuperscriptBox["m", "2", "T"], 
+          SubsuperscriptBox["\[CapitalSigma]", "2", 
+           RowBox[{"-", "1"}]], 
+          SubsuperscriptBox["\[CapitalPi]\[CapitalSigma]", "1", 
+           RowBox[{"-", "1"}]], 
+          SubscriptBox["m", "1"]}]}], ")"}]}]]}]}], 
+   TraditionalForm], "\[IndentingNewLine]", 
+  FormBox[
+   RowBox[{"=", 
+    RowBox[{
+     FractionBox[
+      SqrtBox[
+       RowBox[{
+        SuperscriptBox[
+         RowBox[{"(", 
+          RowBox[{"2", "\[Pi]"}], ")"}], "D"], "|", "\[CapitalPi]", "|"}]], 
+      RowBox[{
+       SuperscriptBox[
+        RowBox[{"(", 
+         RowBox[{"2", "\[Pi]"}], ")"}], "D"], 
+       SqrtBox[
+        RowBox[{"|", 
+         RowBox[{
+          SubscriptBox["\[CapitalSigma]", "1"], "||", 
+          SubscriptBox["\[CapitalSigma]", "2"]}], "|"}]]}]], 
+     SuperscriptBox["\[ExponentialE]", 
+      RowBox[{
+       RowBox[{"-", 
+        FractionBox["1", "2"]}], 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{
+          SubsuperscriptBox["m", "1", "T"], 
+          SuperscriptBox[
+           RowBox[{
+            SubsuperscriptBox["\[CapitalSigma]", "1", 
+             RowBox[{"-", "1"}]], "(", 
+            RowBox[{
+             SubsuperscriptBox["\[CapitalSigma]", "1", 
+              RowBox[{"-", "1"}]], "+", 
+             SubsuperscriptBox["\[CapitalSigma]", "2", 
+              RowBox[{"-", "1"}]]}], ")"}], 
+           RowBox[{"-", "1"}]], 
+          SubsuperscriptBox["\[CapitalSigma]", "2", 
+           RowBox[{"-", "1"}]], 
+          SubscriptBox["m", "1"]}], "+", 
+         RowBox[{
+          SubsuperscriptBox["m", "2", "T"], 
+          SuperscriptBox[
+           RowBox[{
+            SubsuperscriptBox["\[CapitalSigma]", "1", 
+             RowBox[{"-", "1"}]], "(", 
+            RowBox[{
+             SubsuperscriptBox["\[CapitalSigma]", "1", 
+              RowBox[{"-", "1"}]], "+", 
+             SubsuperscriptBox["\[CapitalSigma]", "2", 
+              RowBox[{"-", "1"}]]}], ")"}], 
+           RowBox[{"-", "1"}]], 
+          SubsuperscriptBox["\[CapitalSigma]", "2", 
+           RowBox[{"-", "1"}]], 
+          SubscriptBox["m", "2"]}], "-", 
+         RowBox[{"2", 
+          SubsuperscriptBox["m", "1", "T"], 
+          SubsuperscriptBox["\[CapitalSigma]", "1", 
+           RowBox[{"-", "1"}]], 
+          SubsuperscriptBox["\[CapitalPi]\[CapitalSigma]", "2", 
+           RowBox[{"-", "1"}]], 
+          SubscriptBox["m", "2"]}]}], ")"}]}]]}]}], 
+   TraditionalForm], "\[IndentingNewLine]", 
+  FormBox[
+   RowBox[{"=", 
+    RowBox[{
+     FractionBox[
+      SqrtBox[
+       RowBox[{
+        SuperscriptBox[
+         RowBox[{"(", 
+          RowBox[{"2", "\[Pi]"}], ")"}], "D"], "|", "\[CapitalPi]", "|"}]], 
+      RowBox[{
+       SuperscriptBox[
+        RowBox[{"(", 
+         RowBox[{"2", "\[Pi]"}], ")"}], "D"], 
+       SqrtBox[
+        RowBox[{"|", 
+         RowBox[{
+          SubscriptBox["\[CapitalSigma]", "1"], "||", 
+          SubscriptBox["\[CapitalSigma]", "2"]}], "|"}]]}]], 
+     SuperscriptBox["\[ExponentialE]", 
+      RowBox[{
+       RowBox[{"-", 
+        FractionBox["1", "2"]}], 
+       RowBox[{"(", 
+        RowBox[{
+         SuperscriptBox[
+          RowBox[{"(", 
+           RowBox[{
+            SubscriptBox["m", "1"], "-", 
+            SubscriptBox["m", "2"]}], ")"}], "T"], 
+         SuperscriptBox[
+          RowBox[{
+           SubsuperscriptBox["\[CapitalSigma]", "1", 
+            RowBox[{"-", "1"}]], "(", 
+           RowBox[{
+            SubsuperscriptBox["\[CapitalSigma]", "1", 
+             RowBox[{"-", "1"}]], "+", 
+            SubsuperscriptBox["\[CapitalSigma]", "2", 
+             RowBox[{"-", "1"}]]}], ")"}], 
+          RowBox[{"-", "1"}]], 
+         RowBox[{
+          SubsuperscriptBox["\[CapitalSigma]", "2", 
+           RowBox[{"-", "1"}]], "(", 
+          RowBox[{
+           SubscriptBox["m", "1"], "-", 
+           SubscriptBox["m", "2"]}], ")"}]}], ")"}]}]]}]}], 
+   TraditionalForm], "\[IndentingNewLine]", 
+  FormBox[
+   RowBox[{"\[Distributed]", 
+    RowBox[{
+     RowBox[{"\[ScriptCapitalN]", "(", 
+      RowBox[{
+       SubscriptBox["m", "2"], ",", 
+       RowBox[{
+        RowBox[{
+         SubscriptBox["\[CapitalSigma]", "1"], "(", 
+         RowBox[{
+          SubsuperscriptBox["\[CapitalSigma]", "1", 
+           RowBox[{"-", "1"}]], "+", 
+          SubsuperscriptBox["\[CapitalSigma]", "2", 
+           RowBox[{"-", "1"}]]}], ")"}], 
+        SubscriptBox["\[CapitalSigma]", "2"]}]}], ")"}], " ", "or", " ", 
+     RowBox[{"\[ScriptCapitalN]", "(", 
+      RowBox[{
+       SubscriptBox["m", "1"], ",", 
+       RowBox[{
+        RowBox[{
+         SubscriptBox["\[CapitalSigma]", "1"], "(", 
+         RowBox[{
+          SubsuperscriptBox["\[CapitalSigma]", "1", 
+           RowBox[{"-", "1"}]], "+", 
+          SubsuperscriptBox["\[CapitalSigma]", "2", 
+           RowBox[{"-", "1"}]]}], ")"}], 
+        SubscriptBox["\[CapitalSigma]", "2"]}]}], ")"}], " "}]}], 
+   TraditionalForm]}],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "157b347c-c09c-4b66-8fd7-be6c46d9526f"],
+ "\n\t]\nTogether\n\t",
+ Cell[BoxData[{
+  FormBox[
+   RowBox[{
+    RowBox[{"\[ScriptCapitalP]", "(", 
+     RowBox[{
+      RowBox[{
+       StyleBox[
+        OverscriptBox["r", "^"],
+        FontWeight->"Bold"], "(", 
+       RowBox[{"t", "+", 
+        RowBox[{"\[Delta]", " ", "t"}]}], ")"}], "|", 
+      RowBox[{
+       StyleBox[
+        OverscriptBox["r", "^"],
+        FontWeight->"Bold"], "(", "t", ")"}]}], ")"}], "\[Proportional]", 
+    SuperscriptBox["\[ExponentialE]", 
+     RowBox[{
+      RowBox[{"-", 
+       FractionBox["1", "2"]}], 
+      SuperscriptBox[
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"\[Delta]", " ", 
+          RowBox[{
+           StyleBox["x",
+            FontWeight->"Bold"], "(", 
+           RowBox[{"t", "+", 
+            RowBox[{"\[Delta]", " ", "t"}]}], ")"}]}], "-", 
+         RowBox[{
+          RowBox[{
+           StyleBox[
+            OverscriptBox["r", "^"],
+            FontWeight->"Bold"], "(", "t", ")"}], " ", "\[Delta]", " ", 
+          "t"}]}], ")"}], "T"], 
+      SuperscriptBox[
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{
+          SubscriptBox[
+           StyleBox["\[CapitalSigma]",
+            FontWeight->"Bold"], "x"], 
+          StyleBox[" ",
+           FontWeight->"Bold"], 
+          StyleBox["\[Delta]",
+           FontWeight->"Plain"], 
+          StyleBox[" ",
+           FontWeight->"Plain"], 
+          StyleBox["t",
+           FontWeight->"Plain"]}], 
+         StyleBox["+",
+          FontWeight->"Plain"], 
+         RowBox[{
+          RowBox[{
+           StyleBox["\[CapitalSigma]",
+            FontWeight->"Bold"], "(", "t", ")"}], " ", 
+          SuperscriptBox[
+           RowBox[{"(", 
+            RowBox[{"\[Delta]", " ", "t"}], ")"}], "2"]}]}], ")"}], 
+       RowBox[{"-", "1"}]], 
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"\[Delta]", " ", 
+         RowBox[{
+          StyleBox["x",
+           FontWeight->"Bold"], "(", 
+          RowBox[{"t", "+", 
+           RowBox[{"\[Delta]", " ", "t"}]}], ")"}]}], "-", 
+        RowBox[{
+         RowBox[{
+          StyleBox[
+           OverscriptBox["r", "^"],
+           FontWeight->"Bold"], "(", "t", ")"}], " ", "\[Delta]", " ", 
+         "t"}]}], ")"}]}]]}], TraditionalForm], "\[IndentingNewLine]", 
+  FormBox[
+   RowBox[{"\[Proportional]", 
+    SuperscriptBox["\[ExponentialE]", 
+     RowBox[{
+      RowBox[{"-", 
+       FractionBox["1", "2"]}], 
+      SuperscriptBox[
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{
+          SubscriptBox[
+           StyleBox["\[CapitalSigma]",
+            FontWeight->"Bold"], "x"], 
+          SuperscriptBox[
+           RowBox[{
+            StyleBox["\[CapitalSigma]",
+             FontWeight->"Bold"], "(", 
+            RowBox[{"t", "+", 
+             RowBox[{"\[Delta]", " ", "t"}]}], ")"}], 
+           RowBox[{"-", "1"}]], 
+          RowBox[{
+           StyleBox[
+            OverscriptBox["r", "^"],
+            FontWeight->"Bold"], "(", 
+           RowBox[{"t", "+", 
+            RowBox[{"\[Delta]", " ", "t"}]}], ")"}]}], "-", 
+         RowBox[{
+          SubscriptBox[
+           StyleBox["\[CapitalSigma]",
+            FontWeight->"Bold"], "x"], 
+          SuperscriptBox[
+           RowBox[{
+            StyleBox["\[CapitalSigma]",
+             FontWeight->"Bold"], "(", "t", ")"}], 
+           RowBox[{"-", "1"}]], 
+          RowBox[{
+           StyleBox[
+            OverscriptBox["r", "^"],
+            FontWeight->"Bold"], "(", "t", ")"}]}], "-", 
+         RowBox[{
+          RowBox[{
+           StyleBox[
+            OverscriptBox["r", "^"],
+            FontWeight->"Bold"], "(", "t", ")"}], " ", "\[Delta]", " ", 
+          "t"}]}], ")"}], "T"], 
+      SuperscriptBox[
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{
+          SubscriptBox[
+           StyleBox["\[CapitalSigma]",
+            FontWeight->"Bold"], "x"], 
+          StyleBox[" ",
+           FontWeight->"Bold"], 
+          StyleBox["\[Delta]",
+           FontWeight->"Plain"], 
+          StyleBox[" ",
+           FontWeight->"Plain"], 
+          StyleBox["t",
+           FontWeight->"Plain"]}], 
+         StyleBox["+",
+          FontWeight->"Plain"], 
+         RowBox[{
+          RowBox[{
+           StyleBox["\[CapitalSigma]",
+            FontWeight->"Bold"], "(", "t", ")"}], " ", 
+          SuperscriptBox[
+           RowBox[{"(", 
+            RowBox[{"\[Delta]", " ", "t"}], ")"}], "2"]}]}], ")"}], 
+       RowBox[{"-", "1"}]], 
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{
+         SubscriptBox[
+          StyleBox["\[CapitalSigma]",
+           FontWeight->"Bold"], "x"], 
+         SuperscriptBox[
+          RowBox[{
+           StyleBox["\[CapitalSigma]",
+            FontWeight->"Bold"], "(", 
+           RowBox[{"t", "+", 
+            RowBox[{"\[Delta]", " ", "t"}]}], ")"}], 
+          RowBox[{"-", "1"}]], 
+         RowBox[{
+          StyleBox[
+           OverscriptBox["r", "^"],
+           FontWeight->"Bold"], "(", 
+          RowBox[{"t", "+", 
+           RowBox[{"\[Delta]", " ", "t"}]}], ")"}]}], "-", 
+        RowBox[{
+         SubscriptBox[
+          StyleBox["\[CapitalSigma]",
+           FontWeight->"Bold"], "x"], 
+         SuperscriptBox[
+          RowBox[{
+           StyleBox["\[CapitalSigma]",
+            FontWeight->"Bold"], "(", "t", ")"}], 
+          RowBox[{"-", "1"}]], 
+         RowBox[{
+          StyleBox[
+           OverscriptBox["r", "^"],
+           FontWeight->"Bold"], "(", "t", ")"}]}], "-", 
+        RowBox[{
+         RowBox[{
+          StyleBox[
+           OverscriptBox["r", "^"],
+           FontWeight->"Bold"], "(", "t", ")"}], " ", "\[Delta]", " ", 
+         "t"}]}], ")"}]}]]}], TraditionalForm], "\[IndentingNewLine]", 
+  FormBox[
+   RowBox[{"\[Proportional]", 
+    SuperscriptBox["\[ExponentialE]", 
+     RowBox[{
+      RowBox[{"-", 
+       FractionBox["1", "2"]}], 
+      SuperscriptBox[
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{
+          SubscriptBox[
+           StyleBox["\[CapitalSigma]",
+            FontWeight->"Bold"], "x"], 
+          SuperscriptBox[
+           RowBox[{
+            StyleBox["\[CapitalSigma]",
+             FontWeight->"Bold"], "(", 
+            RowBox[{"t", "+", 
+             RowBox[{"\[Delta]", " ", "t"}]}], ")"}], 
+           RowBox[{"-", "1"}]], 
+          RowBox[{
+           StyleBox[
+            OverscriptBox["r", "^"],
+            FontWeight->"Bold"], "(", 
+           RowBox[{"t", "+", 
+            RowBox[{"\[Delta]", " ", "t"}]}], ")"}]}], "-", 
+         RowBox[{
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{
+             SubscriptBox[
+              StyleBox["\[CapitalSigma]",
+               FontWeight->"Bold"], "x"], 
+             SuperscriptBox[
+              RowBox[{
+               StyleBox["\[CapitalSigma]",
+                FontWeight->"Bold"], "(", "t", ")"}], 
+              RowBox[{"-", "1"}]]}], "+", 
+            RowBox[{"\[Delta]", " ", "t"}]}], ")"}], 
+          RowBox[{
+           StyleBox[
+            OverscriptBox["r", "^"],
+            FontWeight->"Bold"], "(", "t", ")"}]}]}], ")"}], "T"], 
+      SuperscriptBox[
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{
+          SubscriptBox[
+           StyleBox["\[CapitalSigma]",
+            FontWeight->"Bold"], "x"], 
+          StyleBox[" ",
+           FontWeight->"Bold"], 
+          StyleBox["\[Delta]",
+           FontWeight->"Plain"], 
+          StyleBox[" ",
+           FontWeight->"Plain"], 
+          StyleBox["t",
+           FontWeight->"Plain"]}], 
+         StyleBox["+",
+          FontWeight->"Plain"], 
+         RowBox[{
+          RowBox[{
+           StyleBox["\[CapitalSigma]",
+            FontWeight->"Bold"], "(", "t", ")"}], " ", 
+          SuperscriptBox[
+           RowBox[{"(", 
+            RowBox[{"\[Delta]", " ", "t"}], ")"}], "2"]}]}], ")"}], 
+       RowBox[{"-", "1"}]], 
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{
+         SubscriptBox[
+          StyleBox["\[CapitalSigma]",
+           FontWeight->"Bold"], "x"], 
+         SuperscriptBox[
+          RowBox[{
+           StyleBox["\[CapitalSigma]",
+            FontWeight->"Bold"], "(", 
+           RowBox[{"t", "+", 
+            RowBox[{"\[Delta]", " ", "t"}]}], ")"}], 
+          RowBox[{"-", "1"}]], 
+         RowBox[{
+          StyleBox[
+           OverscriptBox["r", "^"],
+           FontWeight->"Bold"], "(", 
+          RowBox[{"t", "+", 
+           RowBox[{"\[Delta]", " ", "t"}]}], ")"}]}], "-", 
+        RowBox[{
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{
+            SubscriptBox[
+             StyleBox["\[CapitalSigma]",
+              FontWeight->"Bold"], "x"], 
+            SuperscriptBox[
+             RowBox[{
+              StyleBox["\[CapitalSigma]",
+               FontWeight->"Bold"], "(", "t", ")"}], 
+             RowBox[{"-", "1"}]]}], "+", 
+           RowBox[{"\[Delta]", " ", "t"}]}], ")"}], 
+         RowBox[{
+          StyleBox[
+           OverscriptBox["r", "^"],
+           FontWeight->"Bold"], "(", "t", ")"}]}]}], ")"}]}]]}], 
+   TraditionalForm], "\[IndentingNewLine]", 
+  FormBox[
+   RowBox[{"\[Proportional]", 
+    SuperscriptBox["\[ExponentialE]", 
+     RowBox[{
+      RowBox[{"-", 
+       FractionBox["1", "2"]}], 
+      SuperscriptBox[
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{
+          SubscriptBox[
+           StyleBox["\[CapitalSigma]",
+            FontWeight->"Bold"], "x"], 
+          SuperscriptBox[
+           RowBox[{
+            StyleBox["\[CapitalSigma]",
+             FontWeight->"Bold"], "(", 
+            RowBox[{"t", "+", 
+             RowBox[{"\[Delta]", " ", "t"}]}], ")"}], 
+           RowBox[{"-", "1"}]], 
+          RowBox[{
+           StyleBox[
+            OverscriptBox["r", "^"],
+            FontWeight->"Bold"], "(", 
+           RowBox[{"t", "+", 
+            RowBox[{"\[Delta]", " ", "t"}]}], ")"}]}], "-", 
+         RowBox[{
+          SubscriptBox[
+           StyleBox["\[CapitalSigma]",
+            FontWeight->"Bold"], "x"], 
+          SuperscriptBox[
+           RowBox[{
+            StyleBox["\[CapitalSigma]",
+             FontWeight->"Bold"], "(", 
+            RowBox[{"t", "+", 
+             RowBox[{"\[Delta]", " ", "t"}]}], ")"}], 
+           RowBox[{"-", "1"}]], 
+          RowBox[{
+           StyleBox[
+            OverscriptBox["r", "^"],
+            FontWeight->"Bold"], "(", "t", ")"}]}]}], ")"}], "T"], 
+      SuperscriptBox[
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{
+          SubscriptBox[
+           StyleBox["\[CapitalSigma]",
+            FontWeight->"Bold"], "x"], 
+          StyleBox[" ",
+           FontWeight->"Bold"], 
+          StyleBox["\[Delta]",
+           FontWeight->"Plain"], 
+          StyleBox[" ",
+           FontWeight->"Plain"], 
+          StyleBox["t",
+           FontWeight->"Plain"]}], 
+         StyleBox["+",
+          FontWeight->"Plain"], 
+         RowBox[{
+          RowBox[{
+           StyleBox["\[CapitalSigma]",
+            FontWeight->"Bold"], "(", "t", ")"}], " ", 
+          SuperscriptBox[
+           RowBox[{"(", 
+            RowBox[{"\[Delta]", " ", "t"}], ")"}], "2"]}]}], ")"}], 
+       RowBox[{"-", "1"}]], 
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{
+         SubscriptBox[
+          StyleBox["\[CapitalSigma]",
+           FontWeight->"Bold"], "x"], 
+         SuperscriptBox[
+          RowBox[{
+           StyleBox["\[CapitalSigma]",
+            FontWeight->"Bold"], "(", 
+           RowBox[{"t", "+", 
+            RowBox[{"\[Delta]", " ", "t"}]}], ")"}], 
+          RowBox[{"-", "1"}]], 
+         RowBox[{
+          StyleBox[
+           OverscriptBox["r", "^"],
+           FontWeight->"Bold"], "(", 
+          RowBox[{"t", "+", 
+           RowBox[{"\[Delta]", " ", "t"}]}], ")"}]}], "-", 
+        RowBox[{
+         SubscriptBox[
+          StyleBox["\[CapitalSigma]",
+           FontWeight->"Bold"], "x"], 
+         SuperscriptBox[
+          RowBox[{
+           StyleBox["\[CapitalSigma]",
+            FontWeight->"Bold"], "(", 
+           RowBox[{"t", "+", 
+            RowBox[{"\[Delta]", " ", "t"}]}], ")"}], 
+          RowBox[{"-", "1"}]], 
+         RowBox[{
+          StyleBox[
+           OverscriptBox["r", "^"],
+           FontWeight->"Bold"], "(", "t", ")"}]}]}], ")"}]}]]}], 
+   TraditionalForm], "\[IndentingNewLine]", 
+  FormBox[
+   RowBox[{"\[Proportional]", 
+    SuperscriptBox["\[ExponentialE]", 
+     RowBox[{
+      RowBox[{"-", 
+       FractionBox["1", "2"]}], 
+      SuperscriptBox[
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{
+          StyleBox[
+           OverscriptBox["r", "^"],
+           FontWeight->"Bold"], "(", 
+          RowBox[{"t", "+", 
+           RowBox[{"\[Delta]", " ", "t"}]}], ")"}], "-", 
+         RowBox[{
+          StyleBox[
+           OverscriptBox["r", "^"],
+           FontWeight->"Bold"], "(", "t", ")"}]}], ")"}], "T"], 
+      SuperscriptBox[
+       RowBox[{
+        StyleBox["\[CapitalSigma]",
+         FontWeight->"Bold"], "(", 
+        RowBox[{"t", "+", 
+         RowBox[{"\[Delta]", " ", "t"}]}], ")"}], 
+       RowBox[{"-", "1"}]], 
+      SuperscriptBox[
+       RowBox[{
+        SubscriptBox[
+         StyleBox["\[CapitalSigma]",
+          FontWeight->"Bold"], "x"], "(", 
+        RowBox[{
+         RowBox[{
+          SubscriptBox[
+           StyleBox["\[CapitalSigma]",
+            FontWeight->"Bold"], "x"], 
+          StyleBox[" ",
+           FontWeight->"Bold"], 
+          StyleBox["\[Delta]",
+           FontWeight->"Plain"], 
+          StyleBox[" ",
+           FontWeight->"Plain"], 
+          StyleBox["t",
+           FontWeight->"Plain"]}], 
+         StyleBox["+",
+          FontWeight->"Plain"], 
+         RowBox[{
+          RowBox[{
+           StyleBox["\[CapitalSigma]",
+            FontWeight->"Bold"], "(", "t", ")"}], " ", 
+          SuperscriptBox[
+           RowBox[{"(", 
+            RowBox[{"\[Delta]", " ", "t"}], ")"}], "2"]}]}], ")"}], 
+       RowBox[{"-", "1"}]], 
+      SubscriptBox[
+       StyleBox["\[CapitalSigma]",
+        FontWeight->"Bold"], "x"], 
+      SuperscriptBox[
+       RowBox[{
+        StyleBox["\[CapitalSigma]",
+         FontWeight->"Bold"], "(", 
+        RowBox[{"t", "+", 
+         RowBox[{"\[Delta]", " ", "t"}]}], ")"}], 
+       RowBox[{"-", "1"}]], 
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{
+         StyleBox[
+          OverscriptBox["r", "^"],
+          FontWeight->"Bold"], "(", 
+         RowBox[{"t", "+", 
+          RowBox[{"\[Delta]", " ", "t"}]}], ")"}], "-", 
+        RowBox[{
+         StyleBox[
+          OverscriptBox["r", "^"],
+          FontWeight->"Bold"], "(", "t", ")"}]}], ")"}]}]]}], 
+   TraditionalForm]}],ExpressionUUID->
+  "0635b383-4232-418f-a4b0-5f4268b14ecf"],
+ "\nFinally, we get\n\t",
+ Cell[BoxData[{
+  FormBox[
+   RowBox[{
+    RowBox[{
+     StyleBox[
+      OverscriptBox["r", "^"],
+      FontWeight->"Bold"], "(", 
+     RowBox[{"t", "+", 
+      RowBox[{"\[Delta]", " ", "t"}]}], ")"}], "|", 
+    RowBox[{
+     RowBox[{
+      StyleBox[
+       OverscriptBox["r", "^"],
+       FontWeight->"Bold"], "(", "t", ")"}], "\[Distributed]", 
+     RowBox[{"\[ScriptCapitalN]", "(", 
+      RowBox[{
+       RowBox[{
+        StyleBox[
+         OverscriptBox["r", "^"],
+         FontWeight->"Bold"], "(", "t", ")"}], ",", 
+       RowBox[{
+        RowBox[{
+         StyleBox["\[CapitalSigma]",
+          FontWeight->"Bold"], "(", 
+         RowBox[{"t", "+", 
+          RowBox[{"\[Delta]", " ", "t"}]}], ")"}], 
+        RowBox[{
+         SubsuperscriptBox[
+          StyleBox["\[CapitalSigma]",
+           FontWeight->"Bold"], "x", 
+          RowBox[{"-", "1"}]], "(", 
+         RowBox[{
+          RowBox[{
+           SubscriptBox[
+            StyleBox["\[CapitalSigma]",
+             FontWeight->"Bold"], "x"], 
+           StyleBox[" ",
+            FontWeight->"Bold"], 
+           StyleBox["\[Delta]",
+            FontWeight->"Plain"], 
+           StyleBox[" ",
+            FontWeight->"Plain"], 
+           StyleBox["t",
+            FontWeight->"Plain"]}], 
+          StyleBox["+",
+           FontWeight->"Plain"], 
+          RowBox[{
+           RowBox[{
+            StyleBox["\[CapitalSigma]",
+             FontWeight->"Bold"], "(", "t", ")"}], " ", 
+           SuperscriptBox[
+            RowBox[{"(", 
+             RowBox[{"\[Delta]", " ", "t"}], ")"}], "2"]}]}], ")"}], 
+        SubsuperscriptBox[
+         StyleBox["\[CapitalSigma]",
+          FontWeight->"Bold"], "x", 
+         RowBox[{"-", "1"}]], 
+        RowBox[{
+         StyleBox["\[CapitalSigma]",
+          FontWeight->"Bold"], "(", 
+         RowBox[{"t", "+", 
+          RowBox[{"\[Delta]", " ", "t"}]}], ")"}]}]}], ")"}]}]}], 
+   TraditionalForm], "\[IndentingNewLine]", 
+  FormBox[
+   RowBox[{
+    RowBox[{
+     RowBox[{
+      StyleBox[
+       OverscriptBox["r", "^"],
+       FontWeight->"Bold"], "(", 
+      RowBox[{"t", "+", 
+       RowBox[{"\[Delta]", " ", "t"}]}], ")"}], "-", 
+     RowBox[{
+      StyleBox[
+       OverscriptBox["r", "^"],
+       FontWeight->"Bold"], "(", "t", ")"}]}], "|", 
+    RowBox[{
+     RowBox[{
+      StyleBox[
+       OverscriptBox["r", "^"],
+       FontWeight->"Bold"], "(", "t", ")"}], "\[Distributed]", 
+     RowBox[{"\[ScriptCapitalN]", "(", 
+      RowBox[{
+       StyleBox["0",
+        FontWeight->"Bold"], ",", 
+       RowBox[{
+        RowBox[{
+         RowBox[{
+          StyleBox["\[CapitalSigma]",
+           FontWeight->"Bold"], "(", 
+          RowBox[{"t", "+", 
+           RowBox[{"\[Delta]", " ", "t"}]}], ")"}], 
+         StyleBox[" ",
+          FontWeight->"Bold"], 
+         SubsuperscriptBox[
+          StyleBox["\[CapitalSigma]",
+           FontWeight->"Bold"], "x", 
+          RowBox[{"-", "1"}]], 
+         RowBox[{
+          StyleBox["\[CapitalSigma]",
+           FontWeight->"Bold"], "(", 
+          RowBox[{"t", "+", 
+           RowBox[{"\[Delta]", " ", "t"}]}], ")"}], 
+         StyleBox["\[Delta]",
+          FontWeight->"Plain"], 
+         StyleBox[" ",
+          FontWeight->"Plain"], 
+         StyleBox["t",
+          FontWeight->"Plain"]}], 
+        StyleBox["+",
+         FontWeight->"Plain"], 
+        RowBox[{
+         RowBox[{
+          StyleBox["\[CapitalSigma]",
+           FontWeight->"Bold"], "(", 
+          RowBox[{"t", "+", 
+           RowBox[{"\[Delta]", " ", "t"}]}], ")"}], 
+         SubsuperscriptBox[
+          StyleBox["\[CapitalSigma]",
+           FontWeight->"Bold"], "x", 
+          RowBox[{"-", "1"}]], 
+         RowBox[{
+          StyleBox["\[CapitalSigma]",
+           FontWeight->"Bold"], "(", "t", ")"}], " ", 
+         SubsuperscriptBox[
+          StyleBox["\[CapitalSigma]",
+           FontWeight->"Bold"], "x", 
+          RowBox[{"-", "1"}]], 
+         RowBox[{
+          StyleBox["\[CapitalSigma]",
+           FontWeight->"Bold"], "(", 
+          RowBox[{"t", "+", 
+           RowBox[{"\[Delta]", " ", "t"}]}], ")"}], 
+         SuperscriptBox[
+          RowBox[{"(", 
+           RowBox[{"\[Delta]", " ", "t"}], ")"}], "2"]}]}]}], ")"}]}]}], 
+   TraditionalForm]}],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "fcc34a1a-cbf2-4fc7-b5f8-0ce574570597"],
+ "\n"
+}], "Text",
+ CellChangeTimes->{{3.805415229394706*^9, 3.805415231156967*^9}, {
+   3.805415645323988*^9, 3.805415654665964*^9}, {3.805415719956172*^9, 
+   3.805415751520904*^9}, {3.80541579141755*^9, 3.805415887784478*^9}, {
+   3.805415919449753*^9, 3.8054160490215054`*^9}, {3.805416082856554*^9, 
+   3.805416107507793*^9}, {3.8054161652006083`*^9, 3.805416168826929*^9}, {
+   3.805416202098531*^9, 3.8054162152604523`*^9}, {3.805416250571121*^9, 
+   3.8054162675274153`*^9}, {3.805416404936719*^9, 3.805416648283742*^9}, {
+   3.805416707354764*^9, 3.805416809667946*^9}, {3.805416851612534*^9, 
+   3.805416928148719*^9}, {3.8054176217006073`*^9, 3.80541762223955*^9}, {
+   3.805433865160706*^9, 3.805433872955124*^9}, {3.8054363505273113`*^9, 
+   3.805436358402503*^9}, {3.805438337349061*^9, 3.805438350176613*^9}, {
+   3.805440172028618*^9, 3.8054402607367277`*^9}, {3.8054403358464813`*^9, 
+   3.8054403969874897`*^9}, {3.805445903620338*^9, 3.80544596675779*^9}, {
+   3.8054460872460747`*^9, 3.805446091110242*^9}, {3.80544612517704*^9, 
+   3.8054462152917624`*^9}, {3.805446363399972*^9, 3.80544636483594*^9}, {
+   3.805446456007242*^9, 3.805446465700693*^9}, {3.805446526372736*^9, 
+   3.805446536246888*^9}, {3.805446675035349*^9, 3.805446689666298*^9}, {
+   3.805446732130591*^9, 3.805446759076436*^9}, {3.805446798180257*^9, 
+   3.805446871998329*^9}, {3.80544692001723*^9, 3.805447062715117*^9}, {
+   3.805447102292583*^9, 3.805447176302484*^9}, {3.805447262106072*^9, 
+   3.805447460223538*^9}, {3.805447533102035*^9, 3.805448064592668*^9}, {
+   3.805448137377099*^9, 3.805448143525283*^9}, {3.8054488750052443`*^9, 
+   3.805448892136869*^9}, {3.8054489254721603`*^9, 3.805448938051149*^9}, {
+   3.805449066247628*^9, 3.8054491259069653`*^9}, {3.805449168178151*^9, 
+   3.805449212495028*^9}, {3.805449246924526*^9, 3.805449274065567*^9}, {
+   3.805449305209306*^9, 3.805449305216305*^9}, {3.805449342080831*^9, 
+   3.8054493939423027`*^9}, {3.8054494360198917`*^9, 
+   3.8054494437651863`*^9}, {3.805450083462048*^9, 3.805450186295415*^9}, {
+   3.805450257188295*^9, 3.805450259937273*^9}, {3.805450411683972*^9, 
+   3.80545048258259*^9}, {3.805450515011463*^9, 3.805450522262866*^9}, {
+   3.805450597934441*^9, 3.805450614646441*^9}, {3.805450648791033*^9, 
+   3.8054506538568687`*^9}, {3.805450694420775*^9, 3.805450694428275*^9}, {
+   3.805450739482663*^9, 3.805450741239751*^9}, {3.8054507824369926`*^9, 
+   3.8054508410477867`*^9}, {3.805450910972547*^9, 3.805450964234743*^9}, {
+   3.805452103649342*^9, 3.805452103657065*^9}, {3.805454561385487*^9, 
+   3.805454735374845*^9}, {3.805454883853346*^9, 3.805454902903967*^9}, 
+   3.805455149838949*^9, 3.8054555170854263`*^9, 3.805455571300147*^9, 
+   3.8055006727736263`*^9, {3.805500748771841*^9, 3.8055007487779303`*^9}, {
+   3.805500780943512*^9, 3.805500874863229*^9}, {3.805501066404107*^9, 
+   3.805501102865304*^9}, {3.805501167709178*^9, 3.805501180333782*^9}, {
+   3.80550160880567*^9, 3.805501631589897*^9}, {3.8055016724300222`*^9, 
+   3.805501803793236*^9}, 3.805501834634207*^9, {3.805502544539654*^9, 
+   3.805502850058659*^9}, {3.805502999464737*^9, 3.805503009471643*^9}, {
+   3.8055030468823137`*^9, 3.805503055569763*^9}, {3.805503103735807*^9, 
+   3.805503344844481*^9}, {3.805503791203349*^9, 3.8055037970501003`*^9}, {
+   3.805503828354875*^9, 3.8055039617726727`*^9}, {3.805503995792508*^9, 
+   3.8055041000747633`*^9}, {3.8055042520231524`*^9, 3.805504267698862*^9}, {
+   3.8055043306814203`*^9, 3.8055043387428617`*^9}, {3.805506171336714*^9, 
+   3.805506171977625*^9}, {3.805506223498678*^9, 3.805506374125895*^9}, {
+   3.805506666778363*^9, 3.805506771133266*^9}, {3.8055068127824697`*^9, 
+   3.80550688966982*^9}, {3.805525483668683*^9, 3.8055254865845413`*^9}, {
+   3.805525530349537*^9, 3.805525594130934*^9}, {3.805525657392581*^9, 
+   3.805525768754174*^9}, {3.8055258012668123`*^9, 3.805526149012423*^9}, {
+   3.805526201583715*^9, 3.805526226267709*^9}, {3.8055262727040997`*^9, 
+   3.805526300233214*^9}, {3.805526341028327*^9, 3.8055267015090227`*^9}, {
+   3.8055267463654633`*^9, 3.8055267566038637`*^9}, {3.8055269002445507`*^9, 
+   3.8055271680868464`*^9}, {3.805527223135337*^9, 3.805527263040328*^9}, {
+   3.805527419627899*^9, 3.805527511523157*^9}, {3.805527916570278*^9, 
+   3.805527977808936*^9}, {3.805528033931118*^9, 3.8055280366758127`*^9}, {
+   3.805528069916244*^9, 3.805528175760693*^9}, {3.805528299588632*^9, 
+   3.805528308845804*^9}, {3.805528402006735*^9, 3.805528461041329*^9}, {
+   3.8055285626105547`*^9, 3.805528573798423*^9}, {3.805528685294286*^9, 
+   3.8055288334331512`*^9}, {3.8055288753557587`*^9, 3.805529045912092*^9}, {
+   3.8055296173615828`*^9, 3.805529617639724*^9}, {3.80553467101538*^9, 
+   3.8055346721070766`*^9}, {3.8055347869390593`*^9, 3.805534918006246*^9}, {
+   3.805534954046043*^9, 3.8055349977804327`*^9}, {3.805535053346006*^9, 
+   3.8055351297550983`*^9}, {3.805535296771723*^9, 3.8055353416686897`*^9}, {
+   3.8055353868527317`*^9, 3.805535429642926*^9}, {3.805535509895896*^9, 
+   3.805535543288898*^9}, {3.8055356674198513`*^9, 3.805535722995713*^9}, {
+   3.805535798358859*^9, 3.805535809250697*^9}, {3.805535875875551*^9, 
+   3.805535903415662*^9}, {3.805535954035345*^9, 3.805535975167959*^9}, {
+   3.8055361208816757`*^9, 3.805536128212875*^9}, {3.8055371067696447`*^9, 
+   3.805537327837936*^9}, {3.805537367529537*^9, 3.805537421810111*^9}, {
+   3.805537466767067*^9, 3.8055375940718946`*^9}, {3.8055376398359423`*^9, 
+   3.805537686087822*^9}, {3.805537724298211*^9, 3.805537824075663*^9}, {
+   3.805537856952096*^9, 3.805537994466785*^9}, {3.805538080155739*^9, 
+   3.8055381893258142`*^9}, {3.8055382244312687`*^9, 3.805538227272655*^9}, {
+   3.805538257325665*^9, 3.805538315497974*^9}, {3.805538357733459*^9, 
+   3.805538503162467*^9}, {3.8055387038008633`*^9, 3.805538728514331*^9}, {
+   3.80553876610882*^9, 3.805538859278533*^9}, {3.805538891965542*^9, 
+   3.805539045764532*^9}, {3.8055391459616327`*^9, 3.805539184273776*^9}, {
+   3.8055392301442947`*^9, 3.805539262788714*^9}, {3.8055393140726767`*^9, 
+   3.8055394080352917`*^9}, {3.805539439019514*^9, 3.8055395005529346`*^9}, {
+   3.805539557405239*^9, 3.805539557412072*^9}, {3.805539600756753*^9, 
+   3.805539682580605*^9}, {3.805539722392983*^9, 3.805539765218647*^9}, {
+   3.805539800239684*^9, 3.805539845188794*^9}, {3.805539881582629*^9, 
+   3.8055398815912037`*^9}, {3.8055908973679047`*^9, 
+   3.8055908989295197`*^9}, {3.805591467249535*^9, 3.805591503550315*^9}, {
+   3.805591555948048*^9, 3.805591704018989*^9}, {3.805591739452281*^9, 
+   3.805591745059845*^9}, {3.8055917951873903`*^9, 3.8055918200060387`*^9}, {
+   3.8055918647188253`*^9, 3.805591898001614*^9}, {3.80559200080473*^9, 
+   3.805592004309471*^9}, {3.805592046805434*^9, 3.805592121219769*^9}, {
+   3.8055922321130247`*^9, 3.805592254333102*^9}, {3.805592452392511*^9, 
+   3.805592659869505*^9}, {3.8055928842724667`*^9, 3.805592936097609*^9}, 
+   3.805598606935377*^9, {3.805598709041658*^9, 3.805598732019442*^9}, {
+   3.805598777471044*^9, 3.805598777479218*^9}, {3.8055988167834682`*^9, 
+   3.80559882327455*^9}, 3.805599195762115*^9, {3.805599968793557*^9, 
+   3.805599969953608*^9}, {3.8056000766850643`*^9, 3.8056000856740217`*^9}, 
+   3.805600153947199*^9, {3.805600385442216*^9, 3.805600425263138*^9}, {
+   3.805600532246696*^9, 3.805600561535172*^9}, {3.8056006313220987`*^9, 
+   3.805600637432837*^9}, {3.805601209735655*^9, 3.805601235944933*^9}, {
+   3.805601274482872*^9, 3.805601350086619*^9}, {3.805601408572095*^9, 
+   3.805601516850184*^9}, {3.80560182763873*^9, 3.805601842694212*^9}, {
+   3.805601939100871*^9, 3.805601940232134*^9}, {3.805602440227592*^9, 
+   3.805602440235237*^9}, {3.80560264301861*^9, 3.805602666866708*^9}, {
+   3.805602779213707*^9, 3.805602780086608*^9}, {3.805603551422206*^9, 
+   3.8056036732558804`*^9}, {3.805603706558799*^9, 3.805603730418318*^9}, {
+   3.805603953012574*^9, 3.805604024164711*^9}, {3.8056043262701693`*^9, 
+   3.8056044573527193`*^9}, {3.805604506572146*^9, 3.8056045308601427`*^9}, {
+   3.805604573820608*^9, 3.805604602394326*^9}, {3.805604655118949*^9, 
+   3.805604710410787*^9}, {3.8056047588655443`*^9, 3.8056048117896557`*^9}, {
+   3.8056157113889427`*^9, 3.805615713774947*^9}, {3.8056198639189787`*^9, 
+   3.8056198860306063`*^9}, {3.805623694559491*^9, 3.8056238075458393`*^9}, {
+   3.805626840453577*^9, 3.80562688740376*^9}, {3.8056269467957706`*^9, 
+   3.805626948974572*^9}, {3.8056664500953293`*^9, 3.805666500990587*^9}, {
+   3.8056667781260977`*^9, 3.8056667889471283`*^9}},
+ FontFamily->
+  "Droid Serif",ExpressionUUID->"60770d54-17eb-479e-b993-fd647039eba2"],
+
+Cell[TextData[{
+ "start point is at 0\n",
+ Cell[BoxData[
+  FormBox[
+   StyleBox["x",
+    FontWeight->"Bold"], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "be7de5bb-7496-479b-8317-726778f3daf7"],
+ " indicates state\n\n",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["S", 
+    RowBox[{"0", ",", "i"}]], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "72bf2161-961f-4145-b98c-cb570f4c6255"],
+ " indicates start point state.\n",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubscriptBox[
+     OverscriptBox["r", "^"], "i"], "=", 
+    RowBox[{"U", "(", 
+     SubscriptBox["S", "i"], ")"}]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "dd4c2356-122b-4d56-bd5a-568ed5be7ab8"],
+ " indicates reward space for each accumulator ",
+ Cell[BoxData[
+  FormBox["i", TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "69a22bef-1f23-48fe-8824-51d8f64ef436"],
+ "\n",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox[
+    OverscriptBox["r", "^"], "max"], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "f7368d91-1d92-4581-975a-3fc103aba9b6"],
+ " indicates ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"max", 
+    RowBox[{"{", 
+     RowBox[{
+      SubscriptBox[
+       OverscriptBox["r", "^"], "1"], ",", 
+      SubscriptBox[
+       OverscriptBox["r", "^"], "2"], ",", 
+      SubscriptBox[
+       OverscriptBox["r", "^"], "3"]}], "}"}]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "9ad2abe5-7650-49fa-b9ce-52e12ed441e6"],
+ " and ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["D", "d"], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "752af676-c817-4d46-9bef-356352579f0c"],
+ " restore the maximum location\n\nbackward induction\n",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["V", "t"], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "cd421cc3-3d4d-4076-a081-7e3f5ec6905b"],
+ ",",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"t", "=", 
+    RowBox[{"1", "\[Ellipsis]", " ", "T"}]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "01e19ce8-4eca-4dc4-82ac-9f1ed9b65de2"],
+ " indicates different values on different states(i.e. ",
+ Cell[BoxData[
+  FormBox[
+   StyleBox["x",
+    FontWeight->"Bold"], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "d8b25305-0897-4295-8377-13397fcfee74"],
+ ").\n",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubscriptBox["V", 
+     RowBox[{"t", "+", "1"}]], "=", 
+    RowBox[{"V", "(", 
+     RowBox[{
+      RowBox[{"t", "+", 
+       RowBox[{"\[Delta]", " ", "t"}]}], ",", " ", 
+      RowBox[{
+       StyleBox["x",
+        FontWeight->"Bold"], "(", 
+       RowBox[{"t", "+", 
+        RowBox[{"\[Delta]", " ", "t"}]}], ")"}]}], ")"}]}], TraditionalForm]],
+  
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "00b1fc9b-8ba1-4799-8025-b0f042b006f6"],
+ "\n\nexpectation\n",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["\[CapitalSigma]", "r"], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "b1abccca-befe-49b3-b7a8-a6d235e426cc"],
+ " covariance matrix of ",
+ Cell[BoxData[
+  FormBox["z", TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "0cac8d01-2855-4a6b-a67d-8813784b1f4a"],
+ "(",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"r", "=", "z"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "0c4a3d44-daf4-4fd7-8c54-d84fc721a465"],
+ ") under assumption ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"r", "=", "z"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "dd9aac4f-7ea1-4c55-99fc-46b70d871a05"],
+ " ,",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["\[CapitalSigma]", "x"], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "120f02ca-ec89-400a-ae02-9c64a05b3442"],
+ " covariance matrix of ",
+ Cell[BoxData[
+  FormBox["x", TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "86fe71d0-11f3-47d8-bd13-ed9bf946cc53"],
+ "\n",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubsuperscriptBox[
+     StyleBox["\[CapitalSigma]",
+      FontWeight->"Bold"], 
+     OverscriptBox["r", "^"], 
+     RowBox[{"-", "1"}]], "=", 
+    RowBox[{
+     SubsuperscriptBox[
+      StyleBox["\[CapitalSigma]",
+       FontWeight->"Bold"], "r", 
+      RowBox[{"-", "1"}]], "+", 
+     RowBox[{"\[Delta]", " ", "t", " ", 
+      SubsuperscriptBox[
+       StyleBox["\[CapitalSigma]",
+        FontWeight->"Bold"], "x", 
+       RowBox[{"-", "1"}]]}]}]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "5617f68a-6454-4822-8cdf-cd56b4cd910b"],
+ "\n",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubsuperscriptBox[
+     StyleBox["\[CapitalSigma]",
+      FontWeight->"Bold"], 
+     RowBox[{
+      OverscriptBox["r", "^"], "(", 
+      RowBox[{"t", "+", 
+       RowBox[{"\[Delta]", " ", "t"}]}], ")"}], 
+     RowBox[{"-", "1"}]], "=", 
+    RowBox[{
+     RowBox[{
+      RowBox[{
+       StyleBox["\[CapitalSigma]",
+        FontWeight->"Bold"], "(", 
+       RowBox[{"t", "+", 
+        RowBox[{"\[Delta]", " ", "t"}]}], ")"}], 
+      StyleBox[" ",
+       FontWeight->"Bold"], 
+      SubsuperscriptBox[
+       StyleBox["\[CapitalSigma]",
+        FontWeight->"Bold"], "x", 
+       RowBox[{"-", "1"}]], 
+      RowBox[{
+       StyleBox["\[CapitalSigma]",
+        FontWeight->"Bold"], "(", 
+       RowBox[{"t", "+", 
+        RowBox[{"\[Delta]", " ", "t"}]}], ")"}], 
+      StyleBox["\[Delta]",
+       FontWeight->"Plain"], 
+      StyleBox[" ",
+       FontWeight->"Plain"], 
+      StyleBox["t",
+       FontWeight->"Plain"]}], 
+     StyleBox["+",
+      FontWeight->"Plain"], 
+     RowBox[{
+      RowBox[{
+       StyleBox["\[CapitalSigma]",
+        FontWeight->"Bold"], "(", 
+       RowBox[{"t", "+", 
+        RowBox[{"\[Delta]", " ", "t"}]}], ")"}], 
+      SubsuperscriptBox[
+       StyleBox["\[CapitalSigma]",
+        FontWeight->"Bold"], "x", 
+       RowBox[{"-", "1"}]], 
+      RowBox[{
+       StyleBox["\[CapitalSigma]",
+        FontWeight->"Bold"], "(", "t", ")"}], " ", 
+      SubsuperscriptBox[
+       StyleBox["\[CapitalSigma]",
+        FontWeight->"Bold"], "x", 
+       RowBox[{"-", "1"}]], 
+      RowBox[{
+       StyleBox["\[CapitalSigma]",
+        FontWeight->"Bold"], "(", 
+       RowBox[{"t", "+", 
+        RowBox[{"\[Delta]", " ", "t"}]}], ")"}], 
+      SuperscriptBox[
+       RowBox[{"(", 
+        RowBox[{"\[Delta]", " ", "t"}], ")"}], "2"]}]}]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "00ae4ad4-c805-44bb-8076-fff7ce7cd36a"],
+ "\n\n",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["S", 
+    RowBox[{"trans", ",", "i"}]], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "17e89269-14cc-472a-90af-4d73140c1a66"],
+ " is the state need to be transferred where the scale is smaller than ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"3", 
+    RowBox[{"diag", "(", 
+     SubsuperscriptBox[
+      StyleBox["\[CapitalSigma]",
+       FontWeight->"Bold"], 
+      RowBox[{
+       OverscriptBox["r", "^"], "(", 
+       RowBox[{"t", "+", 
+        RowBox[{"\[Delta]", " ", "t"}]}], ")"}], 
+      RowBox[{"-", "1"}]], ")"}]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "96e327bf-3bff-414d-961a-63c73d318952"],
+ "\n",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["P", 
+    RowBox[{"Trans", ",", "i"}]], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "4db8e1b1-e412-4326-87e7-ae4129afc7ee"],
+ " is transferring ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    OverscriptBox[
+     StyleBox["r",
+      FontWeight->"Bold"], "^"], "(", "t", ")"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "b23845d0-c711-4dc3-a0df-bb8cc3f2ce38"],
+ " to ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     OverscriptBox[
+      StyleBox["r",
+       FontWeight->"Bold"], "^"], "(", 
+     RowBox[{"t", "+", 
+      RowBox[{"\[Delta]", " ", "t"}]}], ")"}], "-", 
+    RowBox[{
+     OverscriptBox[
+      StyleBox["r",
+       FontWeight->"Bold"], "^"], "(", "t", ")"}]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "4facab08-8e6f-43f4-a84f-a21f80682b7a"],
+ " by \n\t",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"\[Proportional]", 
+    SuperscriptBox["\[ExponentialE]", 
+     RowBox[{
+      RowBox[{"-", 
+       FractionBox["1", "2"]}], 
+      SuperscriptBox[
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{
+          StyleBox[
+           OverscriptBox[
+            StyleBox["r",
+             FontWeight->"Bold"], "^"],
+           FontWeight->"Bold"], 
+          StyleBox["(",
+           FontWeight->"Plain"], 
+          StyleBox[
+           RowBox[{"t", "+", 
+            RowBox[{"\[Delta]", " ", "t"}]}],
+           FontWeight->"Plain"], 
+          StyleBox[")",
+           FontWeight->"Plain"]}], "-", 
+         RowBox[{
+          OverscriptBox[
+           StyleBox["r",
+            FontWeight->"Bold"], 
+           StyleBox["^",
+            FontWeight->"Bold"]], "(", "t", ")"}]}], 
+        StyleBox[")",
+         FontWeight->"Plain"]}], "T"], 
+      SuperscriptBox[
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{
+          RowBox[{
+           StyleBox["\[CapitalSigma]",
+            FontWeight->"Bold"], "(", 
+           RowBox[{"t", "+", 
+            RowBox[{"\[Delta]", " ", "t"}]}], ")"}], 
+          StyleBox[" ",
+           FontWeight->"Bold"], 
+          SubsuperscriptBox[
+           StyleBox["\[CapitalSigma]",
+            FontWeight->"Bold"], "x", 
+           RowBox[{"-", "1"}]], 
+          RowBox[{
+           StyleBox["\[CapitalSigma]",
+            FontWeight->"Bold"], "(", 
+           RowBox[{"t", "+", 
+            RowBox[{"\[Delta]", " ", "t"}]}], ")"}], 
+          StyleBox["\[Delta]",
+           FontWeight->"Plain"], 
+          StyleBox[" ",
+           FontWeight->"Plain"], 
+          StyleBox["t",
+           FontWeight->"Plain"]}], 
+         StyleBox["+",
+          FontWeight->"Plain"], 
+         RowBox[{
+          RowBox[{
+           StyleBox["\[CapitalSigma]",
+            FontWeight->"Bold"], "(", 
+           RowBox[{"t", "+", 
+            RowBox[{"\[Delta]", " ", "t"}]}], ")"}], 
+          SubsuperscriptBox[
+           StyleBox["\[CapitalSigma]",
+            FontWeight->"Bold"], "x", 
+           RowBox[{"-", "1"}]], 
+          RowBox[{
+           StyleBox["\[CapitalSigma]",
+            FontWeight->"Bold"], "(", "t", ")"}], " ", 
+          SubsuperscriptBox[
+           StyleBox["\[CapitalSigma]",
+            FontWeight->"Bold"], "x", 
+           RowBox[{"-", "1"}]], 
+          RowBox[{
+           StyleBox["\[CapitalSigma]",
+            FontWeight->"Bold"], "(", 
+           RowBox[{"t", "+", 
+            RowBox[{"\[Delta]", " ", "t"}]}], ")"}], 
+          SuperscriptBox[
+           RowBox[{"(", 
+            RowBox[{"\[Delta]", " ", "t"}], ")"}], "2"]}]}], ")"}], 
+       RowBox[{"-", "1"}]], 
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{
+         StyleBox[
+          OverscriptBox[
+           StyleBox["r",
+            FontWeight->"Bold"], "^"],
+          FontWeight->"Bold"], 
+         StyleBox["(",
+          FontWeight->"Plain"], 
+         StyleBox[
+          RowBox[{"t", "+", 
+           RowBox[{"\[Delta]", " ", "t"}]}],
+          FontWeight->"Plain"], 
+         StyleBox[")",
+          FontWeight->"Plain"]}], "-", 
+        RowBox[{
+         OverscriptBox[
+          StyleBox["r",
+           FontWeight->"Bold"], 
+          StyleBox["^",
+           FontWeight->"Bold"]], "(", "t", ")"}]}], ")"}]}]]}], 
+   TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "386f672a-7275-4cb4-a2c7-c8683f92e800"],
+ "\n\n\n",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"x", "(", "t", ")"}], "=", 
+    RowBox[{
+     SubscriptBox["\[CapitalSigma]", "x"], "(", 
+     RowBox[{
+      RowBox[{
+       SubscriptBox["\[CapitalSigma]", 
+        OverscriptBox["r", "^"]], "(", 
+       RowBox[{
+        OverscriptBox["r", "^"], "(", "t", ")"}], ")"}], "-", 
+      RowBox[{
+       SubsuperscriptBox["\[CapitalSigma]", "r", 
+        RowBox[{"-", "1"}]], 
+       OverscriptBox["z", "_"]}]}], ")"}]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "0b17e5c0-53e4-45b1-9876-aa26dae552c9"]
+}], "Text",
+ CellChangeTimes->{{3.805415229394706*^9, 3.805415231156967*^9}, {
+   3.805415645323988*^9, 3.805415654665964*^9}, {3.805415719956172*^9, 
+   3.805415751520904*^9}, {3.80541579141755*^9, 3.805415887784478*^9}, {
+   3.805415919449753*^9, 3.8054160490215054`*^9}, {3.805416082856554*^9, 
+   3.805416107507793*^9}, {3.8054161652006083`*^9, 3.805416168826929*^9}, {
+   3.805416202098531*^9, 3.8054162152604523`*^9}, {3.805416250571121*^9, 
+   3.8054162675274153`*^9}, {3.805416404936719*^9, 3.805416648283742*^9}, {
+   3.805416707354764*^9, 3.805416809667946*^9}, {3.805416851612534*^9, 
+   3.805416928148719*^9}, {3.8054176217006073`*^9, 3.80541762223955*^9}, {
+   3.805433865160706*^9, 3.805433866620919*^9}, {3.8054372616020737`*^9, 
+   3.8054373621928043`*^9}, {3.8054374857338247`*^9, 
+   3.8054374963265257`*^9}, {3.805438134623777*^9, 3.805438155548497*^9}, {
+   3.805439405542445*^9, 3.805439405958476*^9}, 3.805525668309219*^9, {
+   3.8056048959676456`*^9, 3.805605035137394*^9}, 3.8056157099735603`*^9, {
+   3.805619902625617*^9, 3.805619903129633*^9}, {3.805620493318622*^9, 
+   3.805620696748138*^9}, {3.805620735936206*^9, 3.805620932704815*^9}, {
+   3.805622125537113*^9, 3.805622204084764*^9}, 3.805622600639536*^9, {
+   3.805622727115917*^9, 3.805622877362904*^9}, {3.805623051239818*^9, 
+   3.80562305465769*^9}, {3.80562401145315*^9, 3.805624090597357*^9}, {
+   3.805626939779973*^9, 3.805626943114786*^9}, {3.8056660595670433`*^9, 
+   3.805666156945993*^9}, {3.805666253297443*^9, 3.8056662938122*^9}, {
+   3.8056664087728853`*^9, 3.8056664316419353`*^9}, 3.805666771213255*^9},
+ FontFamily->
+  "Droid Serif",ExpressionUUID->"723f42cf-5ee6-4413-ad51-04a75f6d64ab"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"v", "=", 
+  RowBox[{
+   SuperscriptBox[
+    RowBox[{"(", 
+     FractionBox["varR", 
+      RowBox[{
+       RowBox[{"varR", 
+        RowBox[{"(", 
+         RowBox[{"t", "+", "dt"}], ")"}]}], "+", "varX"}]], ")"}], "2"], 
+   RowBox[{"(", 
+    RowBox[{"varX", "+", 
+     RowBox[{"varRh", " ", "dt"}]}], ")"}], "dt"}]}]], "Input",
+ CellChangeTimes->{{3.805440945693431*^9, 3.805440989046156*^9}},
+ CellLabel->"In[9]:=",ExpressionUUID->"bb926223-a877-47e0-810b-8480d28f6b5b"],
+
+Cell[BoxData[
+ FractionBox[
+  RowBox[{"dt", " ", 
+   SuperscriptBox["varR", "2"], " ", 
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{"dt", " ", "varRh"}], "+", "varX"}], ")"}]}], 
+  SuperscriptBox[
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{"dt", "+", "t"}], ")"}], " ", "varR"}], "+", "varX"}], ")"}], 
+   "2"]]], "Output",
+ CellChangeTimes->{{3.8054409827664337`*^9, 3.805440990421598*^9}, 
+   3.8054412367437267`*^9},
+ CellLabel->"Out[9]=",ExpressionUUID->"741efa9b-c2b5-4525-91a6-e8d806660858"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  SuperscriptBox["v", 
+   RowBox[{"-", "1"}]], "//", "Expand"}]], "Input",
+ CellChangeTimes->{{3.80544122489435*^9, 3.805441232400591*^9}},
+ CellLabel->"In[10]:=",ExpressionUUID->"ea505c1d-4e77-4d4a-9789-34333252e0fe"],
+
+Cell[BoxData[
+ RowBox[{
+  FractionBox["dt", 
+   RowBox[{
+    RowBox[{"dt", " ", "varRh"}], "+", "varX"}]], "+", 
+  FractionBox[
+   RowBox[{"2", " ", "t"}], 
+   RowBox[{
+    RowBox[{"dt", " ", "varRh"}], "+", "varX"}]], "+", 
+  FractionBox[
+   SuperscriptBox["t", "2"], 
+   RowBox[{"dt", " ", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"dt", " ", "varRh"}], "+", "varX"}], ")"}]}]], "+", 
+  FractionBox[
+   RowBox[{"2", " ", "varX"}], 
+   RowBox[{"varR", " ", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"dt", " ", "varRh"}], "+", "varX"}], ")"}]}]], "+", 
+  FractionBox[
+   RowBox[{"2", " ", "t", " ", "varX"}], 
+   RowBox[{"dt", " ", "varR", " ", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"dt", " ", "varRh"}], "+", "varX"}], ")"}]}]], "+", 
+  FractionBox[
+   SuperscriptBox["varX", "2"], 
+   RowBox[{"dt", " ", 
+    SuperscriptBox["varR", "2"], " ", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"dt", " ", "varRh"}], "+", "varX"}], ")"}]}]]}]], "Output",
+ CellChangeTimes->{{3.805441233062392*^9, 3.8054412376420507`*^9}},
+ CellLabel->"Out[10]=",ExpressionUUID->"3fc182f8-e629-4f80-a239-4ce90e468dbb"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"v", "=", 
+  FractionBox[
+   RowBox[{"(", 
+    RowBox[{"varR", 
+     RowBox[{"(", 
+      RowBox[{"varRh", "+", "varX"}], ")"}]}], ")"}], 
+   RowBox[{
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{"1", "+", 
+       FractionBox["t", "dt"]}], ")"}], "varR"}], "+", 
+    FractionBox["varX", "dt"]}]]}]], "Input",
+ CellChangeTimes->{{3.8054411640407953`*^9, 3.8054412152456617`*^9}},
+ CellLabel->"In[6]:=",ExpressionUUID->"f4cc5fce-a5b3-421a-9db8-543927970945"],
+
+Cell[BoxData[
+ FractionBox[
+  RowBox[{"varR", " ", 
+   RowBox[{"(", 
+    RowBox[{"varRh", "+", "varX"}], ")"}]}], 
+  RowBox[{
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{"1", "+", 
+      FractionBox["t", "dt"]}], ")"}], " ", "varR"}], "+", 
+   FractionBox["varX", "dt"]}]]], "Output",
+ CellChangeTimes->{3.8054412157847023`*^9},
+ CellLabel->"Out[6]=",ExpressionUUID->"4c21dda9-e091-49c5-8b41-369dcaec1ff4"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  SuperscriptBox["v", 
+   RowBox[{"-", "1"}]], "//", "Expand"}]], "Input",
+ CellChangeTimes->{{3.805440991763562*^9, 3.8054410070445023`*^9}},
+ CellLabel->"In[7]:=",ExpressionUUID->"9050e772-7846-4254-b89b-d97004381b1c"],
+
+Cell[BoxData[
+ RowBox[{
+  FractionBox["1", 
+   RowBox[{"varRh", "+", "varX"}]], "+", 
+  FractionBox["t", 
+   RowBox[{"dt", " ", 
+    RowBox[{"(", 
+     RowBox[{"varRh", "+", "varX"}], ")"}]}]], "+", 
+  FractionBox["varX", 
+   RowBox[{"dt", " ", "varR", " ", 
+    RowBox[{"(", 
+     RowBox[{"varRh", "+", "varX"}], ")"}]}]]}]], "Output",
+ CellChangeTimes->{{3.805440994113524*^9, 3.805441007530034*^9}, 
+   3.805441218827325*^9},
+ CellLabel->"Out[7]=",ExpressionUUID->"172c6af1-4d02-40a7-8ce8-5a98fbea5e68"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"v", "=", 
+   RowBox[{"NormalDistribution", "[", 
+    RowBox[{"a", ",", "b"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"NormalDistribution", "[", 
+  RowBox[{"v", ",", "c"}], "]"}]}], "Input",
+ CellChangeTimes->{{3.805540626148443*^9, 3.8055406687166224`*^9}},
+ CellLabel->"In[12]:=",ExpressionUUID->"fb1597f2-2f26-48e0-987b-e61d45531306"],
+
+Cell[BoxData[
+ RowBox[{"NormalDistribution", "[", 
+  RowBox[{
+   RowBox[{"NormalDistribution", "[", 
+    RowBox[{"a", ",", "b"}], "]"}], ",", "c"}], "]"}]], "Output",
+ CellChangeTimes->{{3.805540649517947*^9, 3.805540669036693*^9}},
+ CellLabel->"Out[13]=",ExpressionUUID->"a34da522-d57c-4701-b5f6-0ce72ce8d692"]
+}, Open  ]]
+},
+WindowSize->{1366, 744},
+WindowMargins->{{0, Automatic}, {0, Automatic}},
+Magnification:>1.5 Inherited,
+FrontEndVersion->"12.1 for Linux x86 (64-bit) (June 19, 2020)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"70158277-f613-43b1-a83f-9d2a9b8716a1"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 123305, 3871, 3413, "Text",ExpressionUUID->"60770d54-17eb-479e-b993-fd647039eba2"],
+Cell[123866, 3893, 13787, 424, 731, "Text",ExpressionUUID->"723f42cf-5ee6-4413-ad51-04a75f6d64ab"],
+Cell[CellGroupData[{
+Cell[137678, 4321, 493, 14, 70, "Input",ExpressionUUID->"bb926223-a877-47e0-810b-8480d28f6b5b"],
+Cell[138174, 4337, 532, 16, 78, "Output",ExpressionUUID->"741efa9b-c2b5-4525-91a6-e8d806660858"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[138743, 4358, 242, 5, 45, "Input",ExpressionUUID->"ea505c1d-4e77-4d4a-9789-34333252e0fe"],
+Cell[138988, 4365, 1117, 35, 138, "Output",ExpressionUUID->"3fc182f8-e629-4f80-a239-4ce90e468dbb"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[140142, 4405, 479, 14, 86, "Input",ExpressionUUID->"f4cc5fce-a5b3-421a-9db8-543927970945"],
+Cell[140624, 4421, 405, 12, 83, "Output",ExpressionUUID->"4c21dda9-e091-49c5-8b41-369dcaec1ff4"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[141066, 4438, 244, 5, 45, "Input",ExpressionUUID->"9050e772-7846-4254-b89b-d97004381b1c"],
+Cell[141313, 4445, 506, 14, 71, "Output",ExpressionUUID->"172c6af1-4d02-40a7-8ce8-5a98fbea5e68"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[141856, 4464, 382, 8, 78, "Input",ExpressionUUID->"fb1597f2-2f26-48e0-987b-e61d45531306"],
+Cell[142241, 4474, 311, 6, 51, "Output",ExpressionUUID->"a34da522-d57c-4701-b5f6-0ce72ce8d692"]
+}, Open  ]]
+}
+]
+*)
+

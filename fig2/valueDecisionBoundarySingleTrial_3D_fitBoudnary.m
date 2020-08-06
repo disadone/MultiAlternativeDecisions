@@ -32,12 +32,12 @@ for iT = length(t):-1:1
     end
     g.PTrans{iT} = normal3({S{1}(g.iSTrans{1,iT},g.iSTrans{2,iT},g.iSTrans{3,iT}), ...
                             S{2}(g.iSTrans{1,iT},g.iSTrans{2,iT},g.iSTrans{3,iT}), ...
-                            S{3}(g.iSTrans{1,iT},g.iSTrans{2,iT},g.iSTrans{3,iT})}, [0 0 0], g.covRhTrans(:,:,iT));
+                            S{3}(g.iSTrans{1,iT},g.iSTrans{2,iT},g.iSTrans{3,iT})}, [0 0 0], g.covRhTrans(:,:,iT));% here S treat as Rhat(t+dt)-Rhat(t)
 end
 
 %% Transformation to the diffusion space:
 for iT = length(t):-1:1
-    X_(:,:,iT) = g.covX * (g.invCovRh(:,:,iT) * [S{1}(:) S{2}(:) S{3}(:)]' - g.invCovR * repmat(g.meanR, [1 numel(S{1})])) ;
+    X_(:,:,iT) = g.covX * (g.invCovRh(:,:,iT) * [S{1}(:) S{2}(:) S{3}(:)]' - g.invCovR * repmat(g.meanR, [1 numel(S{1})])) ; % here S treat as Rhat(t) 
     for iC = 3:-1:1;  X{iC,iT} = reshape(X_(iC,:,iT), size(S{iC}));  end
 end
 Xminmax = [min(X_(:)) max(X_(:))];

@@ -115,7 +115,7 @@ rho = rho_;                                                                     
 for iT = length(t)-1:-1:1
     [EVnext(:,:,:,iT), Ptrans{iT}, iStrans{iT}] = E(V(:,:,:,iT+1),S,t(iT),dt,g);                            % <V~(t+1)|S(t)> for waiting
     [V(:,:,:,iT), D(:,:,:,iT)] = max_({Rh{1}-rho*tNull, Rh{2}-rho*tNull, Rh{3}-rho*tNull, EVnext(:,:,:,iT)-(rho+c)*dt});       % [Average-adjusted value (V~), decision] at time t
-%     fprintf('%d/%d\t',iT,length(t)-1); toc;
+    fprintf('%d/%d\t',iT,length(t)-1); toc;
 end
 V0 = mean(vector(V(iS0(1),iS0(2),1)));
 D(D==0) = 4;
@@ -134,6 +134,7 @@ Ptrans = normal3({S{1}(iStrans{1},iStrans{2},iStrans{3}), S{2}(iStrans{1},iStran
 mgn = ceil(size(Ptrans)/2);
 % V = extrap(V,mgn,[5 5 5]);
 EV = convn(V,Ptrans,'same') ./ convn(ones(size(V)),Ptrans,'same');
+return;
 % EV = EV(mgn(1)+1:end-mgn(1), mgn(2)+1:end-mgn(2), mgn(3)+1:end-mgn(3));
 
 function v = varTrans(varRh, varR, varX, t, dt)
